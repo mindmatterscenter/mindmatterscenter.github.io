@@ -1,0 +1,6 @@
+# robots.txt for mindmatterscenter.com
+User-agent: *
+Allow: /
+
+# Point to sitemap
+Sitemap: https://mindmatterscenter.com/sitemap.xml
