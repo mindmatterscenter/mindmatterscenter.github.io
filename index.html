@@ -12,10 +12,10 @@
     <meta name="description" content="Mind Matters Center - Supporting your mental health journey with individual, family & group therapy services." />
     <title>Mind Matters Center</title>
     
-    <!-- Improved Script for SPA routing on GitHub Pages -->
+    <!-- Script for SPA on GitHub Pages - Fixed version to prevent path duplication -->
     <script type="text/javascript">
       (function() {
-        // Check if we're being redirected from the 404 page
+        // Check for the SPA path parameter
         var urlParams = new URLSearchParams(window.location.search);
         var spaPath = urlParams.get('spa-path');
         
@@ -23,8 +23,8 @@
           // Remove the spa-path parameter from the URL
           urlParams.delete('spa-path');
           
-          // Construct the clean URL - ensure we have a leading slash
-          var newPath = spaPath.startsWith('/') ? spaPath : '/' + spaPath;
+          // Construct the clean URL
+          var newPath = '/' + decodeURIComponent(spaPath);
           var newSearch = urlParams.toString();
           var newUrl = newPath + (newSearch ? '?' + newSearch : '') + window.location.hash;
           
@@ -43,7 +43,7 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
-    <script type="module" crossorigin src="/assets/index-rB6OOfhO.js"></script>
+    <script type="module" crossorigin src="/assets/index-CSR7zVnR.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-DwzLc_fO.css">
   </head>
   <body>

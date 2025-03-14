@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <title>Mind Matters Center</title>
     <script>
+      // Improved SPA redirect for GitHub Pages
       (function() {
+        // Get the current path
         var path = window.location.pathname;
-        var cleanPath = path.replace(/\/+/g, '/');
-        sessionStorage.setItem('redirectFrom', cleanPath);
-        var redirectUrl = window.location.origin + '/?spa-path=' + encodeURIComponent(cleanPath.startsWith('/') ? cleanPath.substring(1) : cleanPath);
-        window.location.replace(redirectUrl);
+        
+        // Store the original path to detect duplicate redirects
+        // This helps prevent the path duplication on refresh
+        sessionStorage.setItem('redirected', path);
+        
+        // Redirect to the home page with a special query parameter
+        window.location.replace(window.location.origin + '/?spa-path=' + encodeURIComponent(path.substring(1)));
       })();
     </script>
   </head>
