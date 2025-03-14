@@ -5,6 +5,16 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Check if this is a path that was redirected from 404
+    // by looking for a special flag in sessionStorage
+    const isRedirectedPath = sessionStorage.getItem('redirected') === pathname;
+    
+    // If this is a redirected path, clear the flag but don't scroll
+    if (isRedirectedPath) {
+      sessionStorage.removeItem('redirected');
+      return; // Skip scrolling for redirected paths
+    }
+
     // First attempt with requestAnimationFrame
     const scrollToTop = () => {
       window.scrollTo(0, 0);

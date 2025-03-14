@@ -12,6 +12,28 @@
     <meta name="description" content="Mind Matters Center - Supporting your mental health journey with individual, family & group therapy services." />
     <title>Mind Matters Center</title>
     
+    <!-- Script for SPA on GitHub Pages - Fixed version to prevent path duplication -->
+    <script type="text/javascript">
+      (function() {
+        // Check for the SPA path parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var spaPath = urlParams.get('spa-path');
+        
+        if (spaPath) {
+          // Remove the spa-path parameter from the URL
+          urlParams.delete('spa-path');
+          
+          // Construct the clean URL
+          var newPath = '/' + decodeURIComponent(spaPath);
+          var newSearch = urlParams.toString();
+          var newUrl = newPath + (newSearch ? '?' + newSearch : '') + window.location.hash;
+          
+          // Replace the current URL without reloading the page
+          window.history.replaceState(null, '', newUrl);
+        }
+      })();
+    </script>
+    
     <!-- Preconnect to Google Fonts domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,18 +47,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      (function() {
-        // Get the saved path from sessionStorage
-        const savedPath = sessionStorage.getItem('spa-path');
-        if (savedPath) {
-          // Remove it from sessionStorage
-          sessionStorage.removeItem('spa-path');
-          // Replace the current history state with the saved path
-          const newPath =  (savedPath === '/' ? '' : savedPath);
-          window.history.replaceState(null, null, newPath);
-        }
-      })();
-    </script>
   </body>
 </html>
