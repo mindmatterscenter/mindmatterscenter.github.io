@@ -4,38 +4,19 @@
     <meta charset="utf-8">
     <title>Mind Matters Center</title>
     <script>
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafgraph/spa-github-pages
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment
-
-      // Parse the url
-      var pathSegmentsToKeep = 0;
-      var l = window.location;
+      // Get the current path excluding domain
+      const path = window.location.pathname;
+      const repoName = '/';
       
-      // Extract the path components
-      var origin = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
-      var path = l.pathname.split('/').slice(1);
+      // Store the full path after /
+      const pathAfterRepo = path.slice(path.indexOf(repoName) + repoName.length);
       
-      // If using a repo as a subdirectory, adjust pathSegmentsToKeep
-      // For custom domain like mindmatterscenter.com, keep it at 0
+      // Save it to sessionStorage
+      sessionStorage.setItem('spa-path', pathAfterRepo || '/');
       
-      // Reconstruct the pathname from the path segments we want to keep
-      l.pathname = path.slice(0, pathSegmentsToKeep).join('/');
-      
-      // Construct the redirect URL
-      var redirectUrl = origin + l.pathname + '/?/' + 
-                        path.slice(pathSegmentsToKeep).join('/') + 
-                        (l.search ? '&' + l.search.slice(1) : '') + 
-                        l.hash;
-      
-      // Redirect the browser
-      window.location.replace(redirectUrl);
+      // Redirect to the main entry point
+      window.location.href = window.location.origin + repoName;
     </script>
   </head>
-  <body>
-    <h1>Redirecting...</h1>
-    <p>If you are not redirected automatically, <a href="/">click here to go to the homepage</a>.</p>
-  </body>
+  <body></body>
 </html>
