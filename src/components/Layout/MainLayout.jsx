@@ -24,7 +24,7 @@ const MainLayout = ({ children }) => {
 
         {/* Alternate Language Links */}
         <link rel="alternate" href="https://mindmatterscenter.com/chinese-services" hrefLang="zh" />
-        <link rel="alternate" href="https://mindmatterscentercom/" hrefLang="en" />
+        <link rel="alternate" href="https://mindmatterscenter.com/" hrefLang="en" />
         <link rel="alternate" href="https://mindmatterscenter.com/" hrefLang="x-default" />
 
         {/* Sitemap */}
