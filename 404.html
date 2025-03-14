@@ -4,19 +4,22 @@
     <meta charset="utf-8">
     <title>Mind Matters Center</title>
     <script>
-      // Get the current path excluding domain
-      const path = window.location.pathname;
-      const repoName = '/';
-      
-      // Store the full path after /
-      const pathAfterRepo = path.slice(path.indexOf(repoName) + repoName.length);
-      
-      // Save it to sessionStorage
-      sessionStorage.setItem('spa-path', pathAfterRepo || '/');
-      
-      // Redirect to the main entry point
-      window.location.href = window.location.origin + repoName;
+      // Improved SPA redirect for GitHub Pages
+      (function() {
+        // Get the current path
+        var path = window.location.pathname;
+        
+        // Store the original path to detect duplicate redirects
+        // This helps prevent the path duplication on refresh
+        sessionStorage.setItem('redirected', path);
+        
+        // Redirect to the home page with a special query parameter
+        window.location.replace(window.location.origin + '/?spa-path=' + encodeURIComponent(path.substring(1)));
+      })();
     </script>
   </head>
-  <body></body>
+  <body>
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected automatically, <a href="/">click here to go to the homepage</a>.</p>
+  </body>
 </html>
