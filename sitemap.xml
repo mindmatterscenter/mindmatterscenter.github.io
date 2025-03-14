@@ -1,150 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-<!-- Home Page -->
-<url>
-  <loc>https://mindmatterscenter.com/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
-  <lastmod>2025-03-14</lastmod>
-  <xhtml:link rel="alternate" hreflang="zh" href="https://mindmatterscenter.com/chinese-services"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://mindmatterscenter.com/"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://mindmatterscenter.com/"/>
-  <image:image>
-    <image:loc>https://mindmatterscenter.com/logo.jpg</image:loc>
-    <image:title>Mind Matters Center Logo</image:title>
-  </image:image>
-</url>
-
-<!-- Service Pages -->
-<url>
-  <loc>https://mindmatterscenter.com/services</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/trauma-therapy</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/womens-therapy</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/asia-bipoc-therapy</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/anxiety-therapy</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/depression-therapy</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/relationship-counseling</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/family-cultural-dynamic</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/stress-burnout</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<!-- Chinese Services -->
-<url>
-  <loc>https://mindmatterscenter.com/chinese-services</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-  <lastmod>2025-03-14</lastmod>
-  <xhtml:link rel="alternate" hreflang="zh" href="https://mindmatterscenter.com/chinese-services"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://mindmatterscenter.com/"/>
-</url>
-
-<!-- Team Pages -->
-<url>
-  <loc>https://mindmatterscenter.com/our-team</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/about</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/contact</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<url>
-  <loc>https://mindmatterscenter.com/join-our-team</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<!-- FAQ -->
-<url>
-  <loc>https://mindmatterscenter.com/faq</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<!-- Resources -->
-<url>
-  <loc>https://mindmatterscenter.com/resources</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
-
-<!-- Policy Pages -->
-<url>
-  <loc>https://mindmatterscenter.com/privacy-policy</loc>
-  <changefreq>yearly</changefreq>
-  <priority>0.4</priority>
-  <lastmod>2025-03-14</lastmod>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://mindmatterscenter.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Service Pages -->
+  <url>
+    <loc>https://mindmatterscenter.com/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/trauma-therapy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/womens-therapy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/asia-bipoc-therapy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/anxiety-therapy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/depression-therapy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/relationship-counseling</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/family-cultural-dynamic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/stress-burnout</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Chinese Services -->
+  <url>
+    <loc>https://mindmatterscenter.com/chinese-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Team Pages -->
+  <url>
+    <loc>https://mindmatterscenter.com/our-team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mindmatterscenter.com/join-our-team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- FAQ -->
+  <url>
+    <loc>https://mindmatterscenter.com/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Resources -->
+  <url>
+    <loc>https://mindmatterscenter.com/resources</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Policy Pages -->
+  <url>
+    <loc>https://mindmatterscenter.com/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>

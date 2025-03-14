@@ -2,19 +2,18 @@
 User-agent: *
 Allow: /
 
-# Important! Don't crawl the SPA paths with query parameters
-Disallow: /*?spa-path=*
+# Point to sitemap
+Sitemap: https://mindmatterscenter.com/sitemap.xml
 
-# Ensure the website is fully crawled
-User-agent: Googlebot
-Crawl-delay: 1
-Allow: /
-
-# Prioritize mobile-first indexing
+# Optimized for mobile
 User-agent: Googlebot-Mobile
 Allow: /
 
-# Social media crawlers
+# Optimize crawl rate
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Social media crawlers - allow full access
 User-agent: Twitterbot
 Allow: /
 
@@ -23,6 +22,3 @@ Allow: /
 
 User-agent: LinkedInBot
 Allow: /
-
-# Point to sitemap
-Sitemap: https://mindmatterscenter.com/sitemap.xml
