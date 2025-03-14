@@ -23,7 +23,8 @@ export const createOrganizationStructuredData = () => {
       "availableLanguage": ["English", "Chinese"]
     },
     "sameAs": [
-      // Add your social media profiles here
+      //social media profiles here
+      "https://www.instagram.com/mind.matters.center/"
     ]
   };
 };
