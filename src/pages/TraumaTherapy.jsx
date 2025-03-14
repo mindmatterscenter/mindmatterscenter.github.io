@@ -1,10 +1,24 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
-import Trauma_Support from '../assets/images/trauma-support.jpg';
+import Trauma_SupportImg from '../assets/images/trauma-support.jpg';
 import CTASection from '../components/shared/CTASection';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const TraumaTherapy = () => {
+    // SEO data
+    const seoTitle = "Trauma Therapy | Evidence-Based Treatment & Support";
+    const seoDescription = "Healing from trauma takes time, but you don't have to do it alone. Our trauma-informed therapists provide a safe space to process past experiences, build resilience, and regain control.";
+    const seoKeywords = "trauma therapy, trauma-informed care, EMDR therapy, trauma healing, trauma recovery, trauma counseling, trauma treatment, Asian American trauma therapy, PTSD therapy";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Trauma Therapy",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     const signs = [
         'Flashbacks',
         'Difficulty trusting others',
@@ -52,6 +66,15 @@ const TraumaTherapy = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/trauma-therapy"
+                structuredData={structuredData}
+                ogImage={Trauma_SupportImg}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">
@@ -69,7 +92,7 @@ const TraumaTherapy = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="relative h-[300px] sm:h-[400px] rounded-xl overflow-hidden">
                             <img
-                                src={Trauma_Support}
+                                src={Trauma_SupportImg}
                                 alt="Supportive hand holding in trauma therapy"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

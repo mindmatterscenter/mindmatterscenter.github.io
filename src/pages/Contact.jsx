@@ -2,10 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import { BOOKING_URL, CONTACT_INFO } from '../constants';
+import SEO from '../components/shared/SEO';
+import { contactStructuredData } from '../components/shared/StructuredData';
 
 const Contact = () => {
+  // SEO data
+  const seoTitle = "Contact Us | Mental Health Support in California";
+  const seoDescription = "Contact Mind Matters Center for questions about our therapy services, appointments, or to begin your mental health journey with culturally sensitive care.";
+  const seoKeywords = "contact therapist, therapy contact, mental health contact, Asian American therapist contact, California therapy contact, schedule therapy, appointment booking, therapy consultation";
+
   return (
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
+      {/* SEO Section */}
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonicalUrl="https://mindmatterscenter.com/contact"
+        structuredData={contactStructuredData}
+      />
       {/* Hero Section */}
       <section className="mb-12 sm:mb-16 md:mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +29,7 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-brand-text-primary max-w-3xl mx-auto">
-               We're here to answer your questions and help you begin your journey toward healing and well-being.
+              We're here to answer your questions and help you begin your journey toward healing and well-being.
             </p>
           </div>
         </div>

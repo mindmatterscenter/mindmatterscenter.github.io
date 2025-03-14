@@ -1,10 +1,52 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
 import TherapistImg from '../assets/images/therapist.jpg';
+import SEO from '../components/shared/SEO';
 
 const JoinOurTeam = () => {
+    // SEO data
+    const seoTitle = "Join Our Team | Therapist Careers in California";
+    const seoDescription = "Join Mind Matters Center as a licensed therapist. We're seeking professionals passionate about providing culturally responsive care to Asian American communities in California.";
+    const seoKeywords = "therapist jobs, mental health careers, LMFT jobs, LCSW jobs, LPCC jobs, California therapist positions, Asian American focused therapy, culturally responsive care, therapy employment, California mental health jobs";
+
+    // Create structured data for job posting
+    const jobPostingStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "Licensed Therapist",
+        "description": "Mind Matters Center is seeking licensed therapists who are passionate about providing culturally responsive care, with a focus on serving Asian American communities.",
+        "datePosted": "2025-01-01",
+        "employmentType": "CONTRACTOR",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Mind Matters Center",
+            "sameAs": "https://mindmatterscenter.com/"
+        },
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+            }
+        },
+        "qualifications": "Licensed Therapist (LMFT, LCSW, LPCC, or Licensed Psychologist) in California. Experience with evidence-based practices (CBT, EMDR, IFS, EFT) and passion for working with diverse populations, especially Asian American clients.",
+        "skills": "CBT, EMDR, IFS, EFT, cultural competence, bilingual skills valuable",
+        "jobBenefits": "Flexible scheduling, supportive work environment, professional development",
+        "experienceRequirements": "Licensed mental health professionals",
+        "educationRequirements": "Master's degree or Doctorate in relevant field",
+        "workHours": "Flexible hours available"
+    };
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-28 lg:pt-32 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/join-our-team"
+                structuredData={jobPostingStructuredData}
+            />
             {/* Hero Section */}
             <section className="mb-8 sm:mb-12 md:mb-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,11 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
-import Stress_Burnout from '../assets/images/stress-burnout.jpg';
+import Stress_BurnoutImg from '../assets/images/stress-burnout.jpg';
 import CTASection from '../components/shared/CTASection';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const StressBurnout = () => {
+    // SEO data
+    const seoTitle = "Family & Cultural Dynamics Therapy | Cultural Identity";
+    const seoDescription = "Navigate intergenerational issues and cultural expectations with compassionate therapy. We help individuals and families honor their heritage while fostering personal growth.";
+    const seoKeywords = "family therapy, cultural identity therapy, intergenerational therapy, cultural dynamics, family expectations, Asian American family therapy, immigrant family therapy, cultural stigma, bicultural identity";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Family & Cultural Dynamics Therapy",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     const signs = [
         'Chronic fatigue',
         'Irritability',
@@ -53,6 +66,15 @@ const StressBurnout = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/family-cultural-dynamic"
+                structuredData={structuredData}
+                ogImage={Stress_BurnoutImg}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">
@@ -70,7 +92,7 @@ const StressBurnout = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="relative h-[300px] sm:h-[400px] rounded-xl overflow-hidden">
                             <img
-                                src={Stress_Burnout}
+                                src={Stress_BurnoutImg}
                                 alt="Person experiencing burnout"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

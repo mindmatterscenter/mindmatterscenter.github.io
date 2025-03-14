@@ -3,10 +3,33 @@ import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import CouplesTherapyImg from '../assets/images/couples-therapy.svg';
 import { BOOKING_URL } from '../constants';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const CouplesTherapy = () => {
+    // SEO data
+    const seoTitle = "Couples Therapy | Building Stronger Relationships";
+    const seoDescription = "Our couples therapy helps partners improve communication, rebuild trust, and navigate challenges together using evidence-based approaches like Gottman Method and EFT.";
+    const seoKeywords = "couples therapy, marriage counseling, relationship therapy, Gottman Method, EFT, Emotionally Focused Therapy, communication skills, relationship problems, Asian American couples therapy, intercultural relationships";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Couples Therapy",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/couples-therapy"
+                structuredData={structuredData}
+                ogImage={CouplesTherapyImg}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FadeInSection, HoverCard } from '../components/shared/Animations';
 import AboutUsImg from '../assets/images/aboutus.jpg';
 import { BOOKING_URL } from '../constants';
+import SEO from '../components/shared/SEO';
+import { createOrganizationStructuredData } from '../components/shared/StructuredData';
 
 // Import SVGs
 import IndividualTherapy from '../assets/images/individual-therapy.svg';
@@ -12,6 +14,11 @@ import GroupTherapy from '../assets/images/group-therapy.svg';
 import OnlineTherapy from '../assets/images/online-therapy.svg';
 
 const ChineseServices = () => {
+  // SEO data
+  const seoDescription = "Mind Matters Center is an Asian-owned, women-owned therapy practice dedicated to providing culturally sensitive mental health services for the BIPOC community in California.";
+  const seoKeywords = "Asian American therapy, BIPOC therapy, culturally sensitive therapy, women-owned therapy practice, California mental health, Asian therapist, immigrant therapist";
+  const structuredData = createOrganizationStructuredData();
+
   const services = [
     {
       icon: IndividualTherapy,
@@ -50,6 +57,15 @@ const ChineseServices = () => {
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
+      {/* SEO Section */}
+      <SEO
+        title="Mental Therapy for Asian Americans and BIPOC in California"
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonicalUrl="https://mindmatterscenter.com/chinese-services"
+        structuredData={structuredData}
+        ogImage="https://mindmatterscenter.com/og-images/chinese-services-og.jpg"
+      />
       {/* Hero Section */}
       <section className="mb-12 sm:mb-16 md:mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

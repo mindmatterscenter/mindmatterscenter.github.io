@@ -1,10 +1,23 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
-import Anxiety_Depression from '../assets/images/anxiety.jpg';
+import Anxiety_Img from '../assets/images/anxiety.jpg';
 import CTASection from '../components/shared/CTASection';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const AnxietyTherapy = () => {
+    // SEO data
+    const seoDescription = "Our anxiety therapy helps you develop practical coping strategies and regain a sense of calm. We use evidence-based approaches like CBT and mindfulness in a culturally sensitive environment.";
+    const seoKeywords = "anxiety therapy, anxiety counseling, CBT, cognitive behavioral therapy, mindfulness therapy, anxiety treatment, Asian American anxiety therapy, cultural anxiety therapy";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Anxiety Therapy",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     const symptoms = [
         'Restlessness',
         'Trouble sleeping',
@@ -56,6 +69,15 @@ const AnxietyTherapy = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title="Anxiety Therapy | Culturally Sensitive Treatment"
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/anxiety-therapy"
+                structuredData={structuredData}
+                ogImage={Anxiety_Img}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">
@@ -73,7 +95,7 @@ const AnxietyTherapy = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="relative h-[300px] sm:h-[400px] rounded-xl overflow-hidden">
                             <img
-                                src={Anxiety_Depression}
+                                src={Anxiety_Img}
                                 alt="Person dealing with anxiety and depression"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

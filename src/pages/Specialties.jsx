@@ -9,7 +9,8 @@ import Cultural_Family from '../assets/images/cultural-family.jpg';
 import Trauma_Support from '../assets/images/trauma-support.jpg';
 import { FadeInSection, SpecialtyCard } from '../components/shared/Animations';
 import CTASection from '../components/shared/CTASection';
-
+import SEO from '../components/shared/SEO';
+import {createSpecialitiesStructuredData} from '../components/shared/StructuredData';
 
 const Specialties = () => {
     const specialties = [
@@ -81,8 +82,21 @@ const Specialties = () => {
         // },
     ];
 
+     // SEO data
+     const seoDescription = "Mind Matters Center specializes in culturally sensitive therapy services for Asian Americans and BIPOC communities, including trauma, anxiety, depression, relationship counseling, and more.";
+     const seoKeywords = "therapy services, mental health specialties, trauma therapy, anxiety therapy, depression therapy, Asian American therapy, BIPOC therapy, cultural therapy, California therapy";
+ 
+     const servicesStructuredData = createSpecialitiesStructuredData(specialties);
     return (
         <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title="Our Therapy Specialties | Asian American Mental Health Services"
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/services"
+                structuredData={servicesStructuredData}
+            />
             {/* Hero Section */}
             <section className="mb-12 sm:mb-16 md:mb-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

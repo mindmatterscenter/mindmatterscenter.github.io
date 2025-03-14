@@ -3,10 +3,32 @@ import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import IndividualTherapyImg from '../assets/images/individual-therapy.svg';
 import { BOOKING_URL } from '../constants';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const IndividualTherapy = () => {
+    // SEO data
+    const seoTitle = "Individual Therapy | Personalized Mental Health Support";
+    const seoDescription = "Our culturally responsive individual therapy helps you manage stress, anxiety, depression, and life transitions in a safe, supportive space tailored to your needs.";
+    const seoKeywords = "individual therapy, personal therapy, one-on-one therapy, counseling, mental health therapy, Asian American therapy, BIPOC therapy, cultural therapy, therapy in California, teletherapy";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Individual Therapy",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/individual-therapy"
+                structuredData={structuredData}
+                ogImage={IndividualTherapyImg}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">

@@ -1,10 +1,24 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
-import Cultural_Family from '../assets/images/cultural-family.jpg';
+import Cultural_FamilyImg from '../assets/images/cultural-family.jpg';
 import CTASection from '../components/shared/CTASection';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const FamilyCulturalDynamics = () => {
+    // SEO data
+    const seoTitle = "Family & Cultural Dynamics Therapy | Cultural Identity";
+    const seoDescription = "Navigate intergenerational issues and cultural expectations with compassionate therapy. We help individuals and families honor their heritage while fostering personal growth.";
+    const seoKeywords = "family therapy, cultural identity therapy, intergenerational therapy, cultural dynamics, family expectations, Asian American family therapy, immigrant family therapy, cultural stigma, bicultural identity";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Family & Cultural Dynamics Therapy",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     const struggles = [
         'Pressure to meet family expectations',
         'Cultural stigma around mental health',
@@ -48,6 +62,15 @@ const FamilyCulturalDynamics = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/family-cultural-dynamic"
+                structuredData={structuredData}
+                ogImage={Cultural_FamilyImg}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">
@@ -65,7 +88,7 @@ const FamilyCulturalDynamics = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="relative h-[300px] sm:h-[400px] rounded-xl overflow-hidden">
                             <img
-                                src={Cultural_Family}
+                                src={Cultural_FamilyImg}
                                 alt="Family cultural dynamics therapy"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

@@ -4,8 +4,15 @@ import AboutUsImg from '../assets/images/aboutus.jpg';
 import AsianClientImg from '../assets/images/asian-client.jpg';
 import { BOOKING_URL } from '../constants';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createOrganizationStructuredData } from '../components/shared/StructuredData';
 
 const About = () => {
+  // SEO data
+  const seoDescription = "Mind Matters Center is an Asian-owned, women-owned therapy practice dedicated to providing culturally sensitive mental health services for the BIPOC community in California.";
+  const seoKeywords = "Asian American therapy, BIPOC therapy, culturally sensitive therapy, women-owned therapy practice, California mental health, Asian therapist, immigrant therapist";
+  const structuredData = createOrganizationStructuredData();
+
   const values = [
     {
       title: "Cultural sensitivity",
@@ -38,6 +45,14 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
+      {/* SEO Section */}
+      <SEO
+        title="About Us | Asian-Owned Mental Health Practice"
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonicalUrl="https://mindmatterscenter.com/about"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="mb-12 sm:mb-16 md:mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

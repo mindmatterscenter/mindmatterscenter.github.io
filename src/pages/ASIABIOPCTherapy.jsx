@@ -1,10 +1,24 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
-import BIPOC_Therapy from '../assets/images/asia-bipoc-therapy.jpg';
+import BIPOC_TherapyImg from '../assets/images/asia-bipoc-therapy.jpg';
 import CTASection from '../components/shared/CTASection';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const ASIABIOPCTherapy = () => {
+    // SEO data
+    const seoTitle = "Asian American & BIPOC Therapy | Culturally Sensitive Care";
+    const seoDescription = "Culturally sensitive therapy for Asian Americans and BIPOC communities. Navigate cultural identity, family expectations, and systemic challenges with therapists who understand your experience.";
+    const seoKeywords = "Asian American therapy, BIPOC therapy, culturally sensitive therapy, cultural identity, immigrant therapy, intergenerational trauma, family expectations, racial stress";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Therapy for Asian Americans and BIPOC Communities",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     const challenges = [
         'Cultural identity',
         'Family expectations',
@@ -56,6 +70,15 @@ const ASIABIOPCTherapy = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/asia-bipoc-therapy"
+                structuredData={structuredData}
+                ogImage={BIPOC_TherapyImg}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">
@@ -73,7 +96,7 @@ const ASIABIOPCTherapy = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="relative h-[300px] sm:h-[400px] rounded-xl overflow-hidden">
                             <img
-                                src={BIPOC_Therapy}
+                                src={BIPOC_TherapyImg}
                                 alt="Culturally sensitive therapy session"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

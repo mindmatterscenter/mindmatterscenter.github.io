@@ -1,10 +1,25 @@
 import { Link } from 'react-router-dom';
 import { FadeInSection, AnimatedIcon } from '../components/shared/Animations';
 import { BOOKING_URL } from '../constants';
+import SEO from '../components/shared/SEO';
 
 const NotFound = () => {
+  // SEO data for 404 page
+  const seoTitle = "Page Not Found | Mind Matters Center";
+  const seoDescription = "The page you are looking for doesn't exist. Return to Mind Matters Center's homepage or explore our mental health services.";
+
   return (
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-primary">
+      {/* SEO Section */}
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        canonicalUrl="https://mindmatterscenter.com/404"
+        // Adding noindex directive for 404 page
+        meta={[
+          { name: "robots", content: "noindex, nofollow" }
+        ]}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Icon */}

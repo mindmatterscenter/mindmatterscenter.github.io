@@ -3,8 +3,22 @@ import { FadeInSection } from '../components/shared/Animations';
 import Depression_Img from '../assets/images/depression.jpg';
 import CTASection from '../components/shared/CTASection';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const DepressionTherapy = () => {
+    // SEO data
+    const seoTitle = "Depression Therapy | Evidence-Based Treatment";
+    const seoDescription = "Our depression therapy helps you understand your emotions, develop effective coping strategies, and rediscover motivation and joy in life with culturally sensitive care.";
+    const seoKeywords = "depression therapy, depression treatment, depression counseling, CBT for depression, behavioral activation, mood disorder therapy, sadness, fatigue, Asian American depression therapy";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Depression Therapy",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     const signs = [
         'Persistent sadness',
         'Loss of interest',
@@ -54,6 +68,15 @@ const DepressionTherapy = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/depression-therapy"
+                structuredData={structuredData}
+                ogImage={Depression_Img}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">

@@ -4,3 +4,21 @@ Allow: /
 
 # Point to sitemap
 Sitemap: https://mindmatterscenter.com/sitemap.xml
+
+# Optimized for mobile
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Optimize crawl rate
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Social media crawlers - allow full access
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

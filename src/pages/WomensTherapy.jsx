@@ -1,10 +1,23 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
-import Womens_Therapy from '../assets/images/womens-therapy.jpg';
+import Womens_TherapyImg from '../assets/images/womens-therapy.jpg';
 import CTASection from '../components/shared/CTASection';
 import BookNowCTA from '../components/shared/BookNowCTA';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const WomensTherapy = () => {
+    // SEO data
+    const seoTitle = "Women's Therapy";
+    const seoDescription = "Therapy for women facing unique challenges in life transitions, relationships, and personal growth. Our therapists help cultivate self-compassion and empowerment in your journey.";
+    const seoKeywords = "women's therapy, therapy for women, women's mental health, self-compassion, identity exploration, relationship therapy, life transitions, empowerment therapy, cultural identity women";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Therapy for Women",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
     const signs = [
         'Role overwhelm',
         'People-pleasing',
@@ -54,6 +67,15 @@ const WomensTherapy = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/womens-therapy"
+                structuredData={structuredData}
+                ogImage={Womens_TherapyImg}
+            />
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">
@@ -71,7 +93,7 @@ const WomensTherapy = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="relative h-[300px] sm:h-[400px] rounded-xl overflow-hidden">
                             <img
-                                src={Womens_Therapy}
+                                src={Womens_TherapyImg}
                                 alt="Women in supportive therapy setting"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

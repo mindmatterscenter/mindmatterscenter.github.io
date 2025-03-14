@@ -6,8 +6,15 @@ import WellNessCoachingImg from '../assets/images/wellness-coaching.svg';
 import { FadeInSection, HoverCard } from '../components/shared/Animations';
 import BookNowCTA from '../components/shared/BookNowCTA';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
+import SEO from '../components/shared/SEO';
+import { createOrganizationStructuredData } from '../components/shared/StructuredData';
 
 const Home = () => {
+  // SEO data
+  const seoDescription = "Mind Matters Center provides virtual therapy in California for Asian-American and BIPOC communities. Culturally sensitive mental health services for anxiety, depression, trauma, and relationships.";
+  const seoKeywords = "therapy, mental health, Asian American therapy, BIPOC therapy, California therapy, online therapy, teletherapy, anxiety therapy, depression therapy, trauma therapy, relationship counseling";
+  const structuredData = createOrganizationStructuredData();
+
   const checklistItems = [
     "Feeling anxious or overwhelmed by life's demands?",
     "Struggling with cultural identity or intergenerational conflicts?",
@@ -111,6 +118,16 @@ const Home = () => {
 
   return (
     <>
+      {/* SEO Section */}
+      <SEO
+        title="Mental Therapy for Asian Americans and BIPOC in California"
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonicalUrl="https://mindmatterscenter.com/"
+        ogType="website"
+        ogImage="https://mindmatterscenter.com/logo.jpg"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen">
         <div className="absolute inset-0 bg-black/50 z-10"></div>

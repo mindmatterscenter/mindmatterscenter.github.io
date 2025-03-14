@@ -3,10 +3,68 @@ import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
 import { BOOKING_URL } from '../constants';
+import SEO from '../components/shared/SEO';
 
 const OurTeam = () => {
+    // SEO data
+    const seoDescription = "Meet Yajun (Stella) Zeng, LCSW, Clinical Director at Mind Matters Center. An Asian American immigrant and bilingual therapist specializing in culturally sensitive mental health care.";
+    const seoKeywords = "Asian American therapist, bilingual therapist, Chinese speaking therapist, culturally sensitive therapist, LCSW, licensed clinical social worker, California therapist";
+
+    // Create person structured data
+    const therapistStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yajun (Stella) Zeng",
+        "jobTitle": "Licensed Clinical Social Worker, Clinical Director",
+        "worksFor": {
+            "@type": "MedicalBusiness",
+            "name": "Mind Matters Center"
+        },
+        "description": "Asian American immigrant and bilingual Licensed Clinical Social Worker specializing in culturally sensitive therapy.",
+        "knowsLanguage": ["English", "Chinese"],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Master's in Social Work (MSW)",
+                "educationalLevel": "graduate",
+                "recognizedBy": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "University of Southern California"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Master's in Gerontology (MSG)",
+                "educationalLevel": "graduate",
+                "recognizedBy": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "University of Southern California"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "license",
+                "name": "Licensed Clinical Social Worker (LCSW)",
+                "validIn": {
+                    "@type": "State",
+                    "name": "California"
+                }
+            }
+        ]
+    };
     return (
         <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title="Our Team | Asian American Therapists in California"
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/our-team"
+                structuredData={therapistStructuredData}
+                ogImage={ZengImg}
+            />
             {/* Hero Section */}
             <section className="mb-12 sm:mb-16 md:mb-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

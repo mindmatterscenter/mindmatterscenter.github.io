@@ -1,8 +1,31 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
 import { CONTACT_INFO } from '../constants';
+import SEO from '../components/shared/SEO';
 
 const PrivacyPolicy = () => {
+    // SEO data
+    const seoTitle = "Privacy Policy | Mind Matters Center";
+    const seoDescription = "Mind Matters Center's privacy policy outlines how we collect, use, and protect your information when using our therapy services and website.";
+    const seoKeywords = "privacy policy, mental health privacy, therapy privacy policy, HIPAA compliance, data protection, client confidentiality, therapy data privacy, California privacy policy";
+
+    // Create structured data
+    const privacyPolicyStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Privacy Policy",
+        "description": seoDescription,
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mind Matters Center",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://mindmatterscenter.com/logo.png"
+            }
+        },
+        "dateModified": "2025-02-07"
+    };
+
     const sections = [
         {
             title: "Information We Collect",
@@ -137,8 +160,15 @@ const PrivacyPolicy = () => {
     ];
 
     return (
-
         <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/privacy-policy"
+                structuredData={privacyPolicyStructuredData}
+            />
             {/* Hero Section */}
             <section className="mb-12 sm:mb-16 md:mb-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

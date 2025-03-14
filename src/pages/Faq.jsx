@@ -1,7 +1,7 @@
 import { useState } from 'react';
-
 import { FadeInSection, AnimatedFAQItem } from '../components/shared/Animations';
-
+import SEO from '../components/shared/SEO';
+import { createFAQStructuredData } from '../components/shared/StructuredData';
 
 const Faq = () => {
   const faqs = [
@@ -48,12 +48,24 @@ const Faq = () => {
       answer: "Yes, couples therapy is available virtually and tailored to meet your relationship goals."
     }
   ];
+  // SEO data
+  const seoDescription = "Find answers to frequently asked questions about therapy services at Mind Matters Center, including confidentiality, fees, insurance, and what to expect during sessions.";
+  const seoKeywords = "therapy FAQ, mental health questions, therapy pricing, therapy insurance, HIPAA compliance, therapy sessions, Asian American therapy questions";
+  const faqStructuredData = createFAQStructuredData(faqs);
 
   // State to track which FAQ is open
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-primary">
+      {/* SEO Section */}
+      <SEO
+        title="Frequently Asked Questions | Therapy Services"
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonicalUrl="https://mindmatterscenter.com/faq"
+        structuredData={faqStructuredData}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">

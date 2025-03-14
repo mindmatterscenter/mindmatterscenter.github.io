@@ -3,10 +3,34 @@ import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import WellnessCoachingImg from '../assets/images/wellness-coaching.svg';
 import { BOOKING_URL } from '../constants';
+import SEO from '../components/shared/SEO';
+import { createServiceStructuredData } from '../components/shared/StructuredData';
 
 const WellnessCoaching = () => {
+    // SEO data
+    const seoTitle = "Wellness Coaching | Balance & Personal Development";
+    const seoDescription = "Our wellness coaching helps you build resilience, set meaningful goals, and create a balanced life with culturally attuned guidance for personal and professional growth.";
+    const seoKeywords = "wellness coaching, life coaching, work-life balance, personal development, resilience building, self-care, stress management, goal setting, Asian American coaching, BIPOC coaching";
+
+    // Create service structured data
+    const serviceData = {
+        name: "Wellness Coaching",
+        description: seoDescription
+    };
+    const structuredData = createServiceStructuredData(serviceData);
+
     return (
         <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 bg-brand-background-secondary">
+            {/* SEO Section */}
+            <SEO
+                title={seoTitle}
+                description={seoDescription}
+                keywords={seoKeywords}
+                canonicalUrl="https://mindmatterscenter.com/wellness-coaching"
+                structuredData={structuredData}
+                ogImage={WellnessCoachingImg}
+            />
+
             {/* Hero Section */}
             <section className="px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 mt-8">
                 <div className="max-w-7xl mx-auto">
