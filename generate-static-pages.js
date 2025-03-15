@@ -32,13 +32,113 @@ const extractRoutes = () => {
   ];
 };
 
+// Map of page components to their actual titles and h1 headings from the source React components
+const pageContent = {
+  '/': {
+    title: 'Mental Therapy for Asian Americans and BIPOC in California',
+    h1: 'Virtual therapy in California for Asian-American and BIPOC communities on their path to healing'
+  },
+  '/about': {
+    title: 'About Us | Asian-Owned Mental Health Practice',
+    h1: 'Welcome to Mind Matters Center'
+  },
+  '/services': {
+    title: 'Our Therapy Specialties | Asian American Mental Health Services',
+    h1: 'Our specialties'
+  },
+  '/trauma-therapy': {
+    title: 'Trauma Therapy | Evidence-Based Treatment & Support',
+    h1: 'Trauma therapy'
+  },
+  '/womens-therapy': {
+    title: 'Women\'s Therapy',
+    h1: 'Therapy for women'
+  },
+  '/asia-bipoc-therapy': {
+    title: 'Asian American & BIPOC Therapy | Culturally Sensitive Care',
+    h1: 'Therapy for Asian Americans & BIPOC communities'
+  },
+  '/anxiety-therapy': {
+    title: 'Anxiety Therapy | Culturally Sensitive Treatment',
+    h1: 'Anxiety Therapy'
+  },
+  '/depression-therapy': {
+    title: 'Depression Therapy | Evidence-Based Treatment',
+    h1: 'Depression therapy'
+  },
+  '/relationship-counseling': {
+    title: 'Couples Therapy | Building Stronger Relationships',
+    h1: 'Couples therapy'
+  },
+  '/family-cultural-dynamic': {
+    title: 'Family & Cultural Dynamics Therapy | Cultural Identity',
+    h1: 'Family & cultural dynamics'
+  },
+  '/stress-burnout': {
+    title: 'Stress & Burnout Therapy',
+    h1: 'Stress & burnout'
+  },
+  '/faq': {
+    title: 'Frequently Asked Questions | Therapy Services',
+    h1: 'Frequently Asked Questions'
+  },
+  '/resources': {
+    title: 'Mental Health Resources | Crisis Support & Help',
+    h1: 'Resources for your mental health journey'
+  },
+  '/our-team': {
+    title: 'Our Team | Asian American Therapists in California',
+    h1: 'Meet our team'
+  },
+  '/contact': {
+    title: 'Contact Us | Mental Health Support in California',
+    h1: 'Contact Us'
+  },
+  '/join-our-team': {
+    title: 'Join Our Team | Therapist Careers in California',
+    h1: 'Join our team'
+  },
+  '/chinese-services': {
+    title: 'Mental Therapy for Asian Americans and BIPOC in California',
+    h1: 'Mind Matters Center'
+  },
+  '/privacy-policy': {
+    title: 'Privacy Policy',
+    h1: 'Privacy Policy'
+  }
+};
+
 // Get the title for a specific route
 const getTitleForRoute = (route) => {
-  if (route === '/') return 'Mind Matters Center | Culturally Sensitive Therapy';
+  // Check if we have a predefined title for this route
+  if (pageContent[route] && pageContent[route].title) {
 
-  // Convert route to title format
+    return pageContent[route].title;
+  }
+  // Fallback to the previous method if no predefined title exists
+  if (route === '/') {
+    return 'Mind Matters Center | Culturally Sensitive Therapy';
+  }
+  // Convert route to title format as fallback
   const baseName = route.substring(1).replace(/-/g, ' ');
   return `${baseName.charAt(0).toUpperCase() + baseName.slice(1)} | Mind Matters Center`;
+};
+
+// Get the H1 heading for a specific route
+const getH1ForRoute = (route) => {
+  // Check if we have a predefined H1 for this route
+  if (pageContent[route] && pageContent[route].h1) {
+    return pageContent[route].h1;
+  }
+
+  // Fallback to using the title without the site name
+  if (pageContent[route] && pageContent[route].title) {
+    return pageContent[route].title;
+  }
+
+  // Last resort fallback
+  const baseName = route.substring(1).replace(/-/g, ' ');
+  return `${baseName.charAt(0).toUpperCase() + baseName.slice(1)}`;
 };
 
 // Get meta description for a route
@@ -62,7 +162,6 @@ const getDescriptionForRoute = (route) => {
     '/join-our-team': "Join Mind Matters Center as a licensed therapist. We're seeking professionals passionate about providing culturally responsive care to Asian American communities in California.",
     '/resources': 'Access mental health resources and crisis support information compiled by Mind Matters Center. Find hotlines, support services, and non-emergency therapy options.',
     '/privacy-policy': "Mind Matters Center's privacy policy outlines how we collect, use, and protect your information when using our therapy services and website."
-    // Add more descriptions for other routes as needed
   };
 
   return descriptions[route] || 'Mind Matters Center provides culturally sensitive therapy services for Asian-American and BIPOC communities in California.';
@@ -142,9 +241,37 @@ const generateStaticPages = async () => {
     });
     document.head.appendChild(scriptElement);
 
+    // Add an H1 tag if it doesn't exist in the main content
+    const mainContent = document.querySelector('main') || document.querySelector('body');
+    if (mainContent) {
+      // Check if an H1 already exists
+      let h1Element = document.querySelector('h1');
+
+      // If no H1 exists, add one to the beginning of the main content
+      if (!h1Element && mainContent.firstChild) {
+        h1Element = document.createElement('h1');
+        h1Element.textContent = getH1ForRoute(route);
+        h1Element.className = "text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6";
+
+        // Insert the H1 at the beginning of the main content
+        mainContent.insertBefore(h1Element, mainContent.firstChild);
+      } else if (!h1Element) {
+        // If no firstChild, just append the H1
+        h1Element = document.createElement('h1');
+        h1Element.textContent = getH1ForRoute(route);
+        h1Element.className = "text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6";
+        mainContent.appendChild(h1Element);
+      }
+
+      // If H1 exists but has no content, update it
+      if (h1Element && (!h1Element.textContent || h1Element.textContent.trim() === '')) {
+        h1Element.textContent = getH1ForRoute(route);
+      }
+    }
+
     // Write the modified HTML to the route's index.html
     fs.writeFileSync(path.join(routeDir, 'index.html'), dom.serialize());
-    console.log(`Created static page for ${route}`);
+    console.log(`Created static page for ${route} with proper title and H1 tags`);
   }
 
   console.log('Static page generation complete!');

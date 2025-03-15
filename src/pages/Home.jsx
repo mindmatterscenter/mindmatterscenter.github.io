@@ -122,7 +122,7 @@ const Home = () => {
       <SEO
         title="Mental Therapy for Asian Americans and BIPOC in California"
         description={seoDescription}
-        keywords={seoKeywords}
+        keywords={seoKeywords}  
         canonicalUrl="https://mindmatterscenter.com/"
         ogType="website"
         ogImage="https://mindmatterscenter.com/logo.jpg"

@@ -8,7 +8,7 @@ const MainLayout = ({ children }) => {
     <div className="min-h-screen flex flex-col">
       <Helmet
         defaultTitle="Mind Matters Center | Culturally Sensitive Therapy"
-        titleTemplate="%s | Mind Matters Center"
+        titleTemplate="%s"
       >
         {/* Default/Fallback Meta Tags */}
         <html lang="en" />
