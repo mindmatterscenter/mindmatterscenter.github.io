@@ -6,19 +6,17 @@ import { Helmet } from 'react-helmet-async';
 const MainLayout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
+      <Helmet
+        defaultTitle="Mind Matters Center | Culturally Sensitive Therapy"
+        titleTemplate="%s | Mind Matters Center"
+      >
         {/* Default/Fallback Meta Tags */}
         <html lang="en" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FCC419" />
 
-        {/* Default Title (will be overridden by page-specific titles) */}
-        <title>Mind Matters Center | Culturally Sensitive Therapy</title>
-
-        {/* Fallback Description */}
-        <meta name="description" content="Mind Matters Center provides culturally sensitive therapy services for Asian-American and BIPOC communities in California." />
-
+        
         {/* Robots Meta */}
         <meta name="robots" content="index, follow" />
 

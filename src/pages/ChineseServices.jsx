@@ -15,8 +15,8 @@ import OnlineTherapy from '../assets/images/online-therapy.svg';
 
 const ChineseServices = () => {
   // SEO data
-  const seoDescription = "Mind Matters Center is an Asian-owned, women-owned therapy practice dedicated to providing culturally sensitive mental health services for the BIPOC community in California.";
-  const seoKeywords = "Asian American therapy, BIPOC therapy, culturally sensitive therapy, women-owned therapy practice, California mental health, Asian therapist, immigrant therapist";
+  const seoDescription = "Mind Matters Center 提供专业中文心理治疗服务，帮助亚裔美国人和华裔克服文化适应、压力管理和家庭关系等挑战。我们的双语治疗师理解文化背景对心理健康的影响，为加州居民提供线上和线下服务。";
+  const seoKeywords = "中文心理咨询, 华裔心理治疗, 亚裔美国人心理健康, 双语心理治疗, 文化适应性心理服务, 加州线上心理咨询, 心理健康支持, 中文家庭治疗";
   const structuredData = createOrganizationStructuredData();
 
   const services = [
