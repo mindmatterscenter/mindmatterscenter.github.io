@@ -8,7 +8,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 
 const WomensTherapy = () => {
     // SEO data
-    const seoTitle = "Women's Therapy";
+    const seoTitle = "Women's Therapy | Mind Matters Center";
     const seoDescription = "Therapy for women facing unique challenges in life transitions, relationships, and personal growth. Our therapists help cultivate self-compassion and empowerment in your journey.";
     const seoKeywords = "women's therapy, therapy for women, women's mental health, self-compassion, identity exploration, relationship therapy, life transitions, empowerment therapy, cultural identity women";
 

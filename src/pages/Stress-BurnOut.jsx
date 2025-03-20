@@ -8,7 +8,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 
 const StressBurnout = () => {
     // FIXED SEO data
-    const seoTitle = "Stress & Burnout Therapy";
+    const seoTitle = "Stress & Burnout Therapy | Mind Matters Center";
     const seoDescription = "Find relief from chronic stress and burnout with our culturally sensitive therapy. We help you develop personalized strategies for sustainable well-being and work-life balance.";
     const seoKeywords = "stress therapy, burnout therapy, stress management, work-life balance, chronic stress, burnout recovery, Asian American stress therapy, self-care strategies, mindfulness therapy";
 

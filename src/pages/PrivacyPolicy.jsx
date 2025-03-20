@@ -5,7 +5,7 @@ import SEO from '../components/shared/SEO';
 
 const PrivacyPolicy = () => {
     // SEO data
-    const seoTitle = "Privacy Policy";
+    const seoTitle = "Privacy Policy | Mind Matters Center";
     const seoDescription = "Mind Matters Center's privacy policy outlines how we collect, use, and protect your information when using our therapy services and website.";
     const seoKeywords = "privacy policy, mental health privacy, therapy privacy policy, HIPAA compliance, data protection, client confidentiality, therapy data privacy, California privacy policy";
 

@@ -51,7 +51,7 @@ const pageContent = {
     h1: 'Trauma therapy'
   },
   '/womens-therapy': {
-    title: 'Women\'s Therapy',
+    title: 'Women\'s Therapy | Mind Matters Center',
     h1: 'Therapy for women'
   },
   '/asia-bipoc-therapy': {
@@ -75,7 +75,7 @@ const pageContent = {
     h1: 'Family & cultural dynamics'
   },
   '/stress-burnout': {
-    title: 'Stress & Burnout Therapy',
+    title: 'Stress & Burnout Therapy | Mind Matters Center',
     h1: 'Stress & burnout'
   },
   '/faq': {
@@ -103,7 +103,7 @@ const pageContent = {
     h1: 'Mind Matters Center'
   },
   '/privacy-policy': {
-    title: 'Privacy Policy',
+    title: 'Privacy Policy | Mind Matters Center',
     h1: 'Privacy Policy'
   }
 };
