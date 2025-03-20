@@ -8,7 +8,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 
 const RelationshipCounseling = () => {
     // SEO data
-    const seoTitle = "Relationship Therapy | Building Stronger Connections";
+    const seoTitle = "Relationship Counseling | Couples Therapy Services";
     const seoDescription = "Our relationship therapy helps couples improve communication, rebuild trust, and strengthen emotional connections. Using evidence-based approaches to foster healthier relationships.";
     const seoKeywords = "relationship therapy, couples therapy, marriage counseling, Gottman Method, Emotionally Focused Therapy, EFT, communication skills, trust building, relationship problems, conflict resolution";
     

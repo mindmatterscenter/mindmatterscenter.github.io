@@ -67,7 +67,7 @@ const pageContent = {
     h1: 'Depression therapy'
   },
   '/relationship-counseling': {
-    title: 'Couples Therapy | Building Stronger Relationships',
+    title: 'Relationship Counseling | Couples Therapy Services',
     h1: 'Couples therapy'
   },
   '/family-cultural-dynamic': {
@@ -79,7 +79,7 @@ const pageContent = {
     h1: 'Stress & burnout'
   },
   '/faq': {
-    title: 'Frequently Asked Questions | Therapy Services',
+    title: 'FAQ | Frequently Asked Questions | Therapy Services',
     h1: 'Frequently Asked Questions'
   },
   '/resources': {
@@ -99,7 +99,7 @@ const pageContent = {
     h1: 'Join our team'
   },
   '/chinese-services': {
-    title: 'Mental Therapy for Asian Americans and BIPOC in California',
+    title: 'Chinese Services | Mandarin & Cantonese Therapy Support',
     h1: 'Mind Matters Center'
   },
   '/privacy-policy': {

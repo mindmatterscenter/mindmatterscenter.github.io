@@ -60,7 +60,7 @@ const Faq = () => {
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-primary">
       {/* SEO Section */}
       <SEO
-        title="Frequently Asked Questions | Therapy Services"
+        title="FAQ | Frequently Asked Questions | Therapy Services"
         description={seoDescription}
         keywords={seoKeywords}
         canonicalUrl="https://mindmatterscenter.com/faq"

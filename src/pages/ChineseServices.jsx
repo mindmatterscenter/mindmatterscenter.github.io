@@ -59,7 +59,7 @@ const ChineseServices = () => {
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
       {/* SEO Section */}
       <SEO
-        title="Mental Therapy for Asian Americans and BIPOC in California"
+        title="Chinese Services | Mandarin & Cantonese Therapy Support"
         description={seoDescription}
         keywords={seoKeywords}
         canonicalUrl="https://mindmatterscenter.com/chinese-services"
