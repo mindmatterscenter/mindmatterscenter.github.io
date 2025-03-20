@@ -177,22 +177,31 @@ const generateStaticPages = async () => {
     process.exit(1);
   }
 
-  // Copy the index.html as a template
-  const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
-
-  // Create directory for each route and add index.html
+  // Process all routes including homepage
   for (const route of routes) {
-    if (route === '/') continue; // Skip homepage
-
-    const routeDir = path.join(distDir, route.substring(1));
-
-    // Create directory if it doesn't exist
-    if (!fs.existsSync(routeDir)) {
-      fs.mkdirSync(routeDir, { recursive: true });
+    // For homepage, modify the existing index.html
+    const htmlPath = route === '/' 
+      ? path.join(distDir, 'index.html')
+      : path.join(distDir, route.substring(1), 'index.html');
+    
+    // For non-homepage routes, ensure the directory exists
+    if (route !== '/') {
+      const routeDir = path.join(distDir, route.substring(1));
+      if (!fs.existsSync(routeDir)) {
+        fs.mkdirSync(routeDir, { recursive: true });
+      }
     }
-
+    
+    // Read the existing HTML file or use index.html as template for new routes
+    let html;
+    if (route === '/' || fs.existsSync(htmlPath)) {
+      html = fs.readFileSync(htmlPath, 'utf8');
+    } else {
+      html = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
+    }
+    
     // Create a DOM to modify the HTML
-    const dom = new JSDOM(indexHtml);
+    const dom = new JSDOM(html);
     const document = dom.window.document;
 
     // Update the title
@@ -241,37 +250,35 @@ const generateStaticPages = async () => {
     });
     document.head.appendChild(scriptElement);
 
-    // Add an H1 tag if it doesn't exist in the main content
+    // Add hidden H1 tag for SEO purposes but keep it invisible
     const mainContent = document.querySelector('main') || document.querySelector('body');
     if (mainContent) {
-      // Check if an H1 already exists
+      // Remove any existing H1 created by this script (might have visible styling)
+      const existingH1 = document.querySelector('h1.sr-only, h1[style*="position: absolute"]');
+      if (existingH1) {
+        existingH1.remove();
+      }
+      
+      // Check if an H1 already exists in the content naturally
       let h1Element = document.querySelector('h1');
-
-      // If no H1 exists, add one to the beginning of the main content
-      if (!h1Element && mainContent.firstChild) {
+      
+      // If no H1 exists, add a hidden one
+      if (!h1Element) {
         h1Element = document.createElement('h1');
         h1Element.textContent = getH1ForRoute(route);
-        h1Element.className = "text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6";
-
+        
+        // Add CSS to hide the element visually while keeping it accessible
+        h1Element.className = "sr-only"; 
+        h1Element.style.cssText = "position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;";
+        
         // Insert the H1 at the beginning of the main content
         mainContent.insertBefore(h1Element, mainContent.firstChild);
-      } else if (!h1Element) {
-        // If no firstChild, just append the H1
-        h1Element = document.createElement('h1');
-        h1Element.textContent = getH1ForRoute(route);
-        h1Element.className = "text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6";
-        mainContent.appendChild(h1Element);
-      }
-
-      // If H1 exists but has no content, update it
-      if (h1Element && (!h1Element.textContent || h1Element.textContent.trim() === '')) {
-        h1Element.textContent = getH1ForRoute(route);
       }
     }
 
-    // Write the modified HTML to the route's index.html
-    fs.writeFileSync(path.join(routeDir, 'index.html'), dom.serialize());
-    console.log(`Created static page for ${route} with proper title and H1 tags`);
+    // Write the modified HTML back to the file
+    fs.writeFileSync(htmlPath, dom.serialize());
+    console.log(`Created/Updated static page for ${route} with proper title, meta description, and hidden H1 tags`);
   }
 
   console.log('Static page generation complete!');
