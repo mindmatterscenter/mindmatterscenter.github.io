@@ -6,6 +6,7 @@ import WellNessCoachingImg from '../assets/images/wellness-coaching.svg';
 import { FadeInSection, HoverCard } from '../components/shared/Animations';
 import BookNowCTA from '../components/shared/BookNowCTA';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
+import ElaineImg from '../assets/images/profile_pics/elaine.jpg';
 import SEO from '../components/shared/SEO';
 import { createOrganizationStructuredData } from '../components/shared/StructuredData';
 
@@ -122,7 +123,7 @@ const Home = () => {
       <SEO
         title="Mental Therapy for Asian Americans and BIPOC in California"
         description={seoDescription}
-        keywords={seoKeywords}  
+        keywords={seoKeywords}
         canonicalUrl="https://mindmatterscenter.com/"
         ogType="website"
         ogImage="https://mindmatterscenter.com/logo.jpg"
@@ -253,27 +254,28 @@ const Home = () => {
       {/* Team Introduction Section */}
       <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary inline-block relative">
                 Our Clinical Team
+                <span className="block h-1 w-2/3 bg-brand-sage/30 mx-auto mt-4 rounded-full"></span>
               </h2>
-              <p className="text-base md:text-xl text-brand-text-primary max-w-3xl mx-auto">
+              <p className="text-base md:text-xl text-brand-text-primary/90 max-w-3xl mx-auto mt-6">
                 Dedicated professionals committed to providing culturally responsive mental health care
               </p>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              {/* Featured Therapist */}
-              <div className="md:w-1/2 lg:w-2/5">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
+              {/* Therapist 1 */}
+              <div className="group w-full md:w-[calc(50%-2rem)] max-w-md">
+                <div className="relative rounded-xl overflow-hidden shadow-xl transform transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
                   <img
                     src={ZengImg}
                     alt="Yajun (Stella) Zeng, LCSW"
-                    className="w-full aspect-square md:aspect-auto md:h-[450px] object-cover"
+                    className="w-full h-[450px] object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform transition-transform duration-500">
                     <h3 className="text-xl md:text-2xl font-serif text-white mb-2">
                       Yajun (Stella) Zeng, LCSW
                     </h3>
@@ -282,33 +284,45 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-                {/* Added BookNowCTA button under the image */}
                 <div className="mt-4 flex justify-center">
-                  <BookNowCTA />
+                  <BookNowCTA size="sm" />
                 </div>
               </div>
 
-              {/* Team Description */}
-              <div className="md:w-1/2 lg:w-3/5">
-                <blockquote className="italic text-lg md:text-xl text-brand-text-primary border-l-4 border-brand-sage pl-6 py-2 mb-6">
-                  "At Mind Matters Center, we create a safe and culturally responsive space where clients feel seen, heard, and empowered to navigate life's challenges."
-                </blockquote>
-                <p className="text-base md:text-lg text-brand-text-primary mb-6">
-                  As an Asian American immigrant and bilingual Licensed Clinical Social Worker, I understand the unique challenges that come with balancing cultural expectations, family dynamics, and personal growth.
-                </p>
-                <p className="text-base md:text-lg text-brand-text-primary mb-8">
-                  Our approach integrates evidence-based treatment with cultural sensitivity to help you find healing, balance, and empowerment in every aspect of your life.
-                </p>
-                <Link
-                  to="/our-team"
-                  className="inline-flex items-center text-base md:text-lg font-medium text-brand-sage hover:text-brand-coral transition-colors"
-                >
-                  Meet our entire team
-                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
+              {/* Therapist 2 */}
+              <div className="group w-full md:w-[calc(50%-2rem)] max-w-md">
+                <div className="relative rounded-xl overflow-hidden shadow-xl transform transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+                  <img
+                    src={ElaineImg}
+                    alt="Elaine Li, ASW"
+                    className="w-full h-[450px] object-cover object-center"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform transition-transform duration-500">
+                    <h3 className="text-xl md:text-2xl font-serif text-white mb-2">
+                      Elaine Li, ASW
+                    </h3>
+                    <p className="text-white/90 text-sm md:text-base">
+                      Associate Therapist | Mind Matters Center
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 flex justify-center">
+                  <BookNowCTA size="sm" />
+                </div>
               </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link
+                to="/our-team"
+                className="inline-flex items-center text-lg font-medium text-brand-sage hover:text-brand-coral transition-colors px-6 py-3 rounded-full hover:bg-brand-sage/10 border border-brand-sage/30 hover:border-brand-coral/30"
+              >
+                Read Bios
+                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </FadeInSection>
@@ -375,7 +389,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Specialties Section - Areas of Expertise */}
       {/* Specialties Section - Areas of Expertise */}
       <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>

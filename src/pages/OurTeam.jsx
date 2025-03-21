@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FadeInSection } from '../components/shared/Animations';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
-import { BOOKING_URL } from '../constants';
+import ElaineImg from '../assets/images/profile_pics/elaine.jpg';
+import TeamMember from '../components/shared/TeamMember';
 import SEO from '../components/shared/SEO';
 
 const OurTeam = () => {
@@ -10,50 +9,109 @@ const OurTeam = () => {
     const seoDescription = "Meet Yajun (Stella) Zeng, LCSW, Clinical Director at Mind Matters Center. An Asian American immigrant and bilingual therapist specializing in culturally sensitive mental health care.";
     const seoKeywords = "Asian American therapist, bilingual therapist, Chinese speaking therapist, culturally sensitive therapist, LCSW, licensed clinical social worker, California therapist";
 
-    // Create person structured data
-    const therapistStructuredData = {
+    // Create person structured data for all therapists
+    const therapistsStructuredData = {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Yajun (Stella) Zeng",
-        "jobTitle": "Licensed Clinical Social Worker, Clinical Director",
-        "worksFor": {
-            "@type": "MedicalBusiness",
-            "name": "Mind Matters Center"
-        },
-        "description": "Asian American immigrant and bilingual Licensed Clinical Social Worker specializing in culturally sensitive therapy.",
-        "knowsLanguage": ["English", "Chinese"],
-        "hasCredential": [
+        "@type": "MedicalOrganization",
+        "name": "Mind Matters Center",
+        "url": "https://mindmatterscenter.com",
+        "medicalSpecialty": "Mental Health",
+        "employee": [
             {
-                "@type": "EducationalOccupationalCredential",
-                "credentialCategory": "degree",
-                "name": "Master's in Social Work (MSW)",
-                "educationalLevel": "graduate",
-                "recognizedBy": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "University of Southern California"
-                }
+                "@type": "Person",
+                "name": "Yajun (Stella) Zeng",
+                "jobTitle": "Licensed Clinical Social Worker, Clinical Director",
+                "description": "Asian American immigrant and bilingual Licensed Clinical Social Worker specializing in culturally sensitive therapy.",
+                "knowsLanguage": ["English", "Chinese"],
+                "hasCredential": [
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "degree",
+                        "name": "Master's in Social Work (MSW)",
+                        "educationalLevel": "graduate",
+                        "recognizedBy": {
+                            "@type": "CollegeOrUniversity",
+                            "name": "University of Southern California"
+                        }
+                    },
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "degree",
+                        "name": "Master's in Gerontology (MSG)",
+                        "educationalLevel": "graduate",
+                        "recognizedBy": {
+                            "@type": "CollegeOrUniversity",
+                            "name": "University of Southern California"
+                        }
+                    },
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "license",
+                        "name": "Licensed Clinical Social Worker (LCSW)",
+                        "validIn": {
+                            "@type": "State",
+                            "name": "California"
+                        }
+                    }
+                ]
             },
             {
-                "@type": "EducationalOccupationalCredential",
-                "credentialCategory": "degree",
-                "name": "Master's in Gerontology (MSG)",
-                "educationalLevel": "graduate",
-                "recognizedBy": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "University of Southern California"
-                }
+                "@type": "Person",
+                "name": "Elaine Li",
+                "jobTitle": "Associate Social Worker, Therapist",
+                "description": "Asian American therapist focusing on personal growth, relationships, and mental health challenges using evidence-based approaches."
             },
             {
-                "@type": "EducationalOccupationalCredential",
-                "credentialCategory": "license",
-                "name": "Licensed Clinical Social Worker (LCSW)",
-                "validIn": {
-                    "@type": "State",
-                    "name": "California"
-                }
+                "@type": "Person",
+                "name": "Jessica Chen, LMFT",
+                "jobTitle": "Licensed Marriage and Family Therapist",
+                "description": "Bilingual therapist specializing in family dynamics, relationships, and cultural identity."
             }
         ]
     };
+
+    const teamMembers = [
+        {
+            id: 'zeng',
+            name: 'Yajun (Stella) Zeng, LCSW',
+            title: 'Clinical Director | Mind Matters Center',
+            image: ZengImg,
+            introContent: [
+                'As an Asian American immigrant, my journey into mental health care was shaped by a deep commitment to breaking cultural and linguistic barriers that often prevent Asian American communities from accessing therapy. Navigating life between two cultures has given me a firsthand understanding of the unique stressors and mental health challenges that arise from bicultural identity, immigration, and intergenerational dynamics.'
+            ],
+            credentials: [
+                'Dual master\'s degrees in Social Work (MSW) and Gerontology (MSG) from University of Southern California',
+                'Currently pursuing a Doctorate in Social Work (DSW) at University of Pennsylvania',
+                'Licensed Clinical Social Worker'
+            ],
+            mainContent: [
+                'As a bilingual Licensed Clinical Social Worker fluent in both English and Chinese, I integrate evidence-based treatment approaches, including Cognitive Behavioral Therapy (CBT), attachment-based techniques, and relational-focused methods. My clinical expertise includes working with individuals across the lifespan, with a special focus on older adults, individuals with chronic illnesses, and immigrants, particularly within the Asian American community.'
+            ],
+            quote: 'At Mind Matters Center, I aim to create a safe and culturally responsive space where clients feel seen, heard, and empowered to navigate life\'s challenges. I believe in therapy that honors personal values, fosters self-awareness and strengthens resilience.',
+            personalContent: 'Outside of therapy, I enjoy exploring new places, traveling, reading, practicing yoga, hiking, backpacking, and indulging in delicious food. I also love animals—especially dogs- who hold a special place in my heart.'
+        },
+        {
+            id: 'elaine',
+            name: 'Elaine Li, ASW',
+            title: 'Associate Therapist | Mind Matters Center',
+            image: ElaineImg,
+            introContent: [
+                "My name is Elaine Li, and I’m an associated therapist dedicated to helping individuals navigate their personal growth, relationships, and mental health challenges. My therapeutic approach integrates evidence-based techniques such as Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Motivational Interviewing (MI) to support clients in achieving meaningful change in their lives.",
+                "As an Asian American, I deeply understand the unique struggles and challenges that come with navigating multiple cultures and identities. Many of my clients, especially those from immigrant backgrounds, experience acculturation stress, family dynamics, and the complexities of balancing traditional values with the demands of living in a new culture. These challenges can lead to feelings of isolation, anxiety, and confusion, but I believe that with the right support, everyone can find their path toward healing, self-discovery, and resilience."
+            ],
+            credentials: [
+                    'Master of Social Work from California State University, Los Angeles',
+                    'Associated Social Worker'
+                ],
+                mainContent: [
+                    "Throughout my career, I have worked extensively with both adults and older adults, helping them overcome a variety of issues such as anxiety, depression, trauma, and relationship difficulties. I have seen firsthand how powerful the therapeutic process can be in helping individuals move through difficult transitions, whether it's adjusting to life in a new country, coping with family pressures, or addressing long-standing emotional struggles.",
+                    "My work with clients is built on empathy, respect, and the belief that each person is capable of growth. I focus on creating a safe and non-judgmental space where you can feel heard, understood, and empowered to make positive changes. Together, we will work on improving your mental health, developing coping strategies, strengthening family relationships, and navigating the complexities of cultural identity.",
+                    "Whether you're struggling with family dynamics, adjusting to life in a new environment, or seeking personal growth, my goal is to help you regain a sense of balance and find peace within yourself. By combining my cultural understanding with my professional training, I can offer a supportive and effective space for healing."
+                ],
+                quote: 'I believe therapy is a collaborative journey where we work together to discover your strengths, navigate challenges, and build resilience. My goal is to create a space where you feel truly understood as you embrace your authentic self.',
+                personalContent: "When I'm not working, I love hiking and reading. Both activities allow me to expand my horizons, and I enjoy balancing the adventure of the outdoors with the adventure of a great story."
+        }
+    ];
     return (
         <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
             {/* SEO Section */}
@@ -62,7 +120,7 @@ const OurTeam = () => {
                 description={seoDescription}
                 keywords={seoKeywords}
                 canonicalUrl="https://mindmatterscenter.com/our-team"
-                structuredData={therapistStructuredData}
+                structuredData={therapistsStructuredData}
                 ogImage={ZengImg}
             />
             {/* Hero Section */}
@@ -83,102 +141,9 @@ const OurTeam = () => {
             {/* Team Member Section */}
             <section className="py-12 md:py-16 bg-brand-background-primary">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <FadeInSection>
-                        <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row">
-                            {/* Profile Image and CTA */}
-                            <div className="w-full md:w-[35%] flex flex-col">
-                                <div className="relative h-[300px] md:h-[500px] overflow-hidden rounded-br-2xl">
-                                    <img
-                                        src={ZengImg}
-                                        alt="Yajun (Stella) Zeng"
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-                                    {/* Name and Title Overlay */}
-                                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                                        <h2 className="text-2xl md:text-3xl font-serif mb-2 text-white">
-                                            Yajun (Stella) Zeng, LCSW
-                                        </h2>
-                                        <p className="text-lg text-white/90 italic">
-                                            Clinical Director | Mind Matters Center
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* Consultation Button */}
-                                <div className="text-center py-6">
-                                    <div className="flex flex-col items-center gap-2">
-                                        <Link
-                                            to={BOOKING_URL} target="_blank"
-                                            className="inline-block bg-brand-coral text-white text-xl font-bold 
-                                                        px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
-                                                        hover:transform hover:scale-105 active:scale-95"
-                                        >
-                                            Book Now
-                                        </Link>
-                                        <span className="text-sm sm:text-base text-brand-text-primary/80">
-                                            Free 20 Minute Consultation
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Bio Content */}
-                            <div className="w-full md:w-[65%] p-6 sm:p-8 md:p-10">
-                                <div className="space-y-8">
-                                    <div className="space-y-6">
-                                        <p className="text-lg text-brand-text-primary/90 leading-relaxed">
-                                            As an Asian American immigrant, my journey into mental health care was shaped by a deep commitment
-                                            to breaking cultural and linguistic barriers that often prevent Asian American communities from
-                                            accessing therapy. Navigating life between two cultures has given me a firsthand understanding
-                                            of the unique stressors and mental health challenges that arise from bicultural identity,
-                                            immigration, and intergenerational dynamics.
-                                        </p>
-                                        <div className="bg-brand-background-secondary p-6 rounded-lg">
-                                            <h3 className="text-lg font-semibold text-brand-text-primary mb-4">Education & Credentials</h3>
-                                            <ul className="space-y-3 text-brand-text-primary/90">
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-brand-sage">•</span>
-                                                    <span>Dual master’s degrees in Social Work (MSW) and Gerontology (MSG) from University of Southern California</span>
-                                                </li>
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-brand-sage">•</span>
-                                                    <span>Currently pursuing a Doctorate in Social Work (DSW) at University of Pennsylvania</span>
-                                                </li>
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-brand-sage">•</span>
-                                                    <span>Licensed Clinical Social Worker</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-4">
-                                        <p className="text-lg text-brand-text-primary/90 leading-relaxed">
-                                            As a bilingual Licensed Clinical Social Worker fluent in both English and Chinese,
-                                            I integrate evidence-based treatment approaches, including Cognitive Behavioral Therapy (CBT),
-                                            attachment-based techniques, and relational-focused methods.
-                                            My clinical expertise includes working with individuals across the lifespan, with a special focus on older adults,
-                                            individuals with chronic illnesses, and immigrants, particularly within the Asian American community.
-                                        </p>
-
-                                        <blockquote className="border-l-4 border-brand-sage pl-6 py-4">
-                                            <p className="text-lg italic text-brand-text-primary/90">
-                                                At Mind Matters Center, I aim to create a safe and culturally responsive space where clients feel seen, heard, and empowered to navigate life’s challenges.
-                                                I believe in therapy that honors personal values, fosters self-awareness and strengthens resilience.
-                                            </p>
-                                        </blockquote>
-
-                                        <p className="text-lg text-brand-text-primary/90 leading-relaxed pt-4">
-                                            Outside of therapy, I enjoy exploring new places, traveling, reading, practicing yoga, hiking, backpacking, and indulging in delicious food.
-                                            I also love animals—especially dogs- who hold a special place in my heart.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </FadeInSection>
+                    {teamMembers.map((member) => (
+                        <TeamMember key={member.id} member={member} />
+                    ))}
                 </div>
             </section>
         </div>
