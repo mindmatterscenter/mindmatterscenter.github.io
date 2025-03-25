@@ -72,7 +72,7 @@ const OurTeam = () => {
 
     const teamMembers = [
         {
-            id: 'zeng',
+            id: 'stella',
             name: 'Yajun (Stella) Zeng, LCSW',
             title: 'Clinical Director | Mind Matters Center',
             image: ZengImg,
@@ -96,7 +96,7 @@ const OurTeam = () => {
             title: 'Associate Therapist | Mind Matters Center',
             image: ElaineImg,
             introContent: [
-                "My name is Elaine Li, and I’m an associated therapist dedicated to helping individuals navigate their personal growth, relationships, and mental health challenges. My therapeutic approach integrates evidence-based techniques such as Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Motivational Interviewing (MI) to support clients in achieving meaningful change in their lives.",
+                "My name is Elaine Li, and I’m an associate therapist dedicated to helping individuals navigate their personal growth, relationships, and mental health challenges. My therapeutic approach integrates evidence-based techniques such as Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Motivational Interviewing (MI) to support clients in achieving meaningful change in their lives.",
                 "As an Asian American, I deeply understand the unique struggles and challenges that come with navigating multiple cultures and identities. Many of my clients, especially those from immigrant backgrounds, experience acculturation stress, family dynamics, and the complexities of balancing traditional values with the demands of living in a new culture. These challenges can lead to feelings of isolation, anxiety, and confusion, but I believe that with the right support, everyone can find their path toward healing, self-discovery, and resilience."
             ],
             credentials: [

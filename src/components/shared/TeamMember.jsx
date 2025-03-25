@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FadeInSection } from '../shared/Animations';
-import { BOOKING_URL } from '../../constants';
+import BookNowCTA from '../shared/BookNowCTA';
 
 const TeamMember = ({ member }) => {
   return (
@@ -31,14 +31,7 @@ const TeamMember = ({ member }) => {
           {/* Consultation Button */}
           <div className="text-center py-6">
             <div className="flex flex-col items-center gap-2">
-              <Link
-                to={BOOKING_URL} target="_blank"
-                className="inline-block bg-brand-coral text-white text-xl font-bold 
-                            px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
-                            hover:transform hover:scale-105 active:scale-95"
-              >
-                Book Now
-              </Link>
+            <BookNowCTA therapistId={member.id} size="md" />
               <span className="text-sm sm:text-base text-brand-text-primary/80">
                 Free 20 Minute Consultation
               </span>

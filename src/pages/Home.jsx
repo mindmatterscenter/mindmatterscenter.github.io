@@ -285,7 +285,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="mt-4 flex justify-center">
-                  <BookNowCTA size="sm" />
+                  <BookNowCTA size="sm" therapistId="stella" />
                 </div>
               </div>
 
@@ -308,7 +308,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="mt-4 flex justify-center">
-                  <BookNowCTA size="sm" />
+                  <BookNowCTA size="sm" therapistId="elaine" />
                 </div>
               </div>
             </div>
