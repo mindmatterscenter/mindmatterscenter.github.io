@@ -180,10 +180,10 @@ const generateStaticPages = async () => {
   // Process all routes including homepage
   for (const route of routes) {
     // For homepage, modify the existing index.html
-    const htmlPath = route === '/' 
+    const htmlPath = route === '/'
       ? path.join(distDir, 'index.html')
       : path.join(distDir, route.substring(1), 'index.html');
-    
+
     // For non-homepage routes, ensure the directory exists
     if (route !== '/') {
       const routeDir = path.join(distDir, route.substring(1));
@@ -191,7 +191,7 @@ const generateStaticPages = async () => {
         fs.mkdirSync(routeDir, { recursive: true });
       }
     }
-    
+
     // Read the existing HTML file or use index.html as template for new routes
     let html;
     if (route === '/' || fs.existsSync(htmlPath)) {
@@ -199,7 +199,7 @@ const generateStaticPages = async () => {
     } else {
       html = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
     }
-    
+
     // Create a DOM to modify the HTML
     const dom = new JSDOM(html);
     const document = dom.window.document;
@@ -253,24 +253,24 @@ const generateStaticPages = async () => {
     // Add hidden H1 tag for SEO purposes but keep it invisible
     const mainContent = document.querySelector('main') || document.querySelector('body');
     if (mainContent) {
-      // Remove any existing H1 created by this script (might have visible styling)
-      const existingH1 = document.querySelector('h1.sr-only, h1[style*="position: absolute"]');
-      if (existingH1) {
-        existingH1.remove();
+      // Remove any existing H1 created by this script
+      const existingHiddenH1 = document.querySelector('h1.sr-only, h1[style*="position: absolute"]');
+      if (existingHiddenH1) {
+        existingHiddenH1.remove();
       }
-      
-      // Check if an H1 already exists in the content naturally
-      let h1Element = document.querySelector('h1');
-      
-      // If no H1 exists, add a hidden one
-      if (!h1Element) {
-        h1Element = document.createElement('h1');
+
+      // Carefully check for all H1 elements - React might render them with various classes
+      const allH1Elements = document.querySelectorAll('h1');
+
+      // If no H1 exists at all, only then add a hidden one
+      if (allH1Elements.length === 0) {
+        const h1Element = document.createElement('h1');
         h1Element.textContent = getH1ForRoute(route);
-        
+
         // Add CSS to hide the element visually while keeping it accessible
-        h1Element.className = "sr-only"; 
+        h1Element.className = "sr-only";
         h1Element.style.cssText = "position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;";
-        
+
         // Insert the H1 at the beginning of the main content
         mainContent.insertBefore(h1Element, mainContent.firstChild);
       }
