@@ -9,7 +9,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 const DepressionTherapy = () => {
     // SEO data
     const seoTitle = "Depression Therapy | Evidence-Based Treatment";
-    const seoDescription = "Our depression therapy helps you understand your emotions, develop effective coping strategies, and rediscover motivation and joy in life with culturally sensitive care.";
+    const seoDescription = "Depression therapy to understand emotions, develop coping strategies, and rediscover joy with cultural sensitivity.";
     const seoKeywords = "depression therapy, depression treatment, depression counseling, CBT for depression, behavioral activation, mood disorder therapy, sadness, fatigue, Asian American depression therapy";
 
     // Create service structured data

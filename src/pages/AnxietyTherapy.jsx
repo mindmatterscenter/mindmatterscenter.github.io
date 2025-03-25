@@ -8,7 +8,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 
 const AnxietyTherapy = () => {
     // SEO data
-    const seoDescription = "Our anxiety therapy helps you develop practical coping strategies and regain a sense of calm. We use evidence-based approaches like CBT and mindfulness in a culturally sensitive environment.";
+    const seoDescription = "Evidence-based anxiety therapy with culturally sensitive approaches to help you develop coping strategies and regain calm.";
     const seoKeywords = "anxiety therapy, anxiety counseling, CBT, cognitive behavioral therapy, mindfulness therapy, anxiety treatment, Asian American anxiety therapy, cultural anxiety therapy";
 
     // Create service structured data

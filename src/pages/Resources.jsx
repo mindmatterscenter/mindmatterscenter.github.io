@@ -7,7 +7,7 @@ import { createResourcesStructuredData } from '../components/shared/StructuredDa
 const Resources = () => {
     // SEO data
     const seoTitle = "Mental Health Resources | Crisis Support & Help";
-    const seoDescription = "Access mental health resources and crisis support information compiled by Mind Matters Center. Find hotlines, support services, and non-emergency therapy options.";
+    const seoDescription = "Access mental health resources, crisis support information, hotlines, and non-emergency therapy options.";
     const seoKeywords = "mental health resources, crisis resources, therapy resources, crisis hotlines, mental health support, suicide prevention, 988 crisis line, LGBTQ+ support, domestic violence help, California mental health";
 
     // Create structured data for the resources page

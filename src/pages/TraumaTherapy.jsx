@@ -9,7 +9,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 const TraumaTherapy = () => {
     // SEO data
     const seoTitle = "Trauma Therapy | Evidence-Based Treatment & Support";
-    const seoDescription = "Healing from trauma takes time, but you don't have to do it alone. Our trauma-informed therapists provide a safe space to process past experiences, build resilience, and regain control.";
+    const seoDescription = "Trauma therapy in a safe space where you can heal, build resilience, and reclaim your story with compassionate support.";
     const seoKeywords = "trauma therapy, trauma-informed care, EMDR therapy, trauma healing, trauma recovery, trauma counseling, trauma treatment, Asian American trauma therapy, PTSD therapy";
 
     // Create service structured data

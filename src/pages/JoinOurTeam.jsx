@@ -6,7 +6,7 @@ import SEO from '../components/shared/SEO';
 const JoinOurTeam = () => {
     // SEO data
     const seoTitle = "Join Our Team | Therapist Careers in California";
-    const seoDescription = "Join Mind Matters Center as a licensed therapist. We're seeking professionals passionate about providing culturally responsive care to Asian American communities in California.";
+    const seoDescription = "Join our team as a licensed therapist passionate about culturally responsive care for Asian American communities.";
     const seoKeywords = "therapist jobs, mental health careers, LMFT jobs, LCSW jobs, LPCC jobs, California therapist positions, Asian American focused therapy, culturally responsive care, therapy employment, California mental health jobs";
 
     // Create structured data for job posting

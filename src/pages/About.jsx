@@ -9,7 +9,7 @@ import { createOrganizationStructuredData } from '../components/shared/Structure
 
 const About = () => {
   // SEO data
-  const seoDescription = "Mind Matters Center is an Asian-owned, women-owned therapy practice dedicated to providing culturally sensitive mental health services for the BIPOC community in California.";
+  const seoDescription = "An Asian-owned, women-owned therapy practice for culturally sensitive mental health services in California.";
   const seoKeywords = "Asian American therapy, BIPOC therapy, culturally sensitive therapy, women-owned therapy practice, California mental health, Asian therapist, immigrant therapist";
   const structuredData = createOrganizationStructuredData();
 

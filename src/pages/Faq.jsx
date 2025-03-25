@@ -49,7 +49,7 @@ const Faq = () => {
     }
   ];
   // SEO data
-  const seoDescription = "Find answers to frequently asked questions about therapy services at Mind Matters Center, including confidentiality, fees, insurance, and what to expect during sessions.";
+  const seoDescription = "Answers about therapy services at Mind Matters Center, including confidentiality, fees, and what to expect.";
   const seoKeywords = "therapy FAQ, mental health questions, therapy pricing, therapy insurance, HIPAA compliance, therapy sessions, Asian American therapy questions";
   const faqStructuredData = createFAQStructuredData(faqs);
 

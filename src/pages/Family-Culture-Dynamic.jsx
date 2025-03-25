@@ -9,7 +9,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 const FamilyCulturalDynamics = () => {
     // SEO data
     const seoTitle = "Family & Cultural Dynamics Therapy | Cultural Identity";
-    const seoDescription = "Navigate intergenerational issues and cultural expectations with compassionate therapy. We help individuals and families honor their heritage while fostering personal growth.";
+    const seoDescription = "Navigate intergenerational issues and cultural expectations with therapy that honors heritage while fostering growth.";
     const seoKeywords = "family therapy, cultural identity therapy, intergenerational therapy, cultural dynamics, family expectations, Asian American family therapy, immigrant family therapy, cultural stigma, bicultural identity";
 
     // Create service structured data

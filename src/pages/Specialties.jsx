@@ -83,7 +83,7 @@ const Specialties = () => {
     ];
 
      // SEO data
-     const seoDescription = "Mind Matters Center specializes in culturally sensitive therapy services for Asian Americans and BIPOC communities, including trauma, anxiety, depression, relationship counseling, and more.";
+     const seoDescription = "Culturally sensitive therapy services for Asian Americans and BIPOC communities, including trauma, anxiety, and depression.";
      const seoKeywords = "therapy services, mental health specialties, trauma therapy, anxiety therapy, depression therapy, Asian American therapy, BIPOC therapy, cultural therapy, California therapy";
  
      const servicesStructuredData = createSpecialitiesStructuredData(specialties);

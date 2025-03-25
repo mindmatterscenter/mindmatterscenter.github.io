@@ -9,7 +9,7 @@ import { createServiceStructuredData } from '../components/shared/StructuredData
 const ASIABIOPCTherapy = () => {
     // SEO data
     const seoTitle = "Asian American & BIPOC Therapy | Culturally Sensitive Care";
-    const seoDescription = "Culturally sensitive therapy for Asian Americans and BIPOC communities. Navigate cultural identity, family expectations, and systemic challenges with therapists who understand your experience.";
+    const seoDescription = "Therapy for Asian Americans and BIPOC communities with therapists who understand your cultural experience.";
     const seoKeywords = "Asian American therapy, BIPOC therapy, culturally sensitive therapy, cultural identity, immigrant therapy, intergenerational trauma, family expectations, racial stress";
 
     // Create service structured data

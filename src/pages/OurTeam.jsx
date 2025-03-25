@@ -6,7 +6,7 @@ import SEO from '../components/shared/SEO';
 
 const OurTeam = () => {
     // SEO data
-    const seoDescription = "Meet Yajun (Stella) Zeng, LCSW, Clinical Director at Mind Matters Center. An Asian American immigrant and bilingual therapist specializing in culturally sensitive mental health care.";
+    const seoDescription = "Meet our team of Asian American therapists dedicated to culturally responsive mental health care. ";
     const seoKeywords = "Asian American therapist, bilingual therapist, Chinese speaking therapist, culturally sensitive therapist, LCSW, licensed clinical social worker, California therapist";
 
     // Create person structured data for all therapists

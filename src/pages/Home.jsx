@@ -12,7 +12,7 @@ import { createOrganizationStructuredData } from '../components/shared/Structure
 
 const Home = () => {
   // SEO data
-  const seoDescription = "Mind Matters Center provides virtual therapy in California for Asian-American and BIPOC communities. Culturally sensitive mental health services for anxiety, depression, trauma, and relationships.";
+  const seoDescription = "Mind Matters Center provides culturally sensitive therapy services for Asian-American and BIPOC communities in California.";
   const seoKeywords = "therapy, mental health, Asian American therapy, BIPOC therapy, California therapy, online therapy, teletherapy, anxiety therapy, depression therapy, trauma therapy, relationship counseling";
   const structuredData = createOrganizationStructuredData();
 
