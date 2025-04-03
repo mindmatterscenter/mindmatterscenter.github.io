@@ -1,7 +1,8 @@
 import React from 'react';
+import TeamMember from '../components/shared/TeamMember';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
 import ElaineImg from '../assets/images/profile_pics/elaine.jpg';
-import TeamMember from '../components/shared/TeamMember';
+import ChelseaImg from '../assets/images/profile_pics/chelsea.jpg'; // You'll need to add this image
 import SEO from '../components/shared/SEO';
 
 const OurTeam = () => {
@@ -63,13 +64,35 @@ const OurTeam = () => {
             },
             {
                 "@type": "Person",
-                "name": "Jessica Chen, LMFT",
-                "jobTitle": "Licensed Marriage and Family Therapist",
-                "description": "Bilingual therapist specializing in family dynamics, relationships, and cultural identity."
+                "name": "Chelsea Lee",
+                "jobTitle": "Associate Professional Clinical Counselor",
+                "description": "Integrative therapist specializing in life transitions, relationship challenges, and cultural identity issues.",
+                "hasCredential": [
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "degree",
+                        "name": "Master of Philosophy in Education (M.Phil. Ed.)",
+                        "educationalLevel": "graduate",
+                        "recognizedBy": {
+                            "@type": "CollegeOrUniversity",
+                            "name": "University of Pennsylvania"
+                        }
+                    },
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "degree",
+                        "name": "Master of Science in Education (MSEd.)",
+                        "educationalLevel": "graduate",
+                        "recognizedBy": {
+                            "@type": "CollegeOrUniversity",
+                            "name": "University of Pennsylvania"
+                        }
+                    }
+                ]
             }
         ]
     };
-
+    
     const teamMembers = [
         {
             id: 'stella',
@@ -96,22 +119,44 @@ const OurTeam = () => {
             title: 'Associate Therapist | Mind Matters Center',
             image: ElaineImg,
             introContent: [
-                "My name is Elaine Li, and I’m an associate therapist dedicated to helping individuals navigate their personal growth, relationships, and mental health challenges. My therapeutic approach integrates evidence-based techniques such as Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Motivational Interviewing (MI) to support clients in achieving meaningful change in their lives.",
+                "My name is Elaine Li, and I'm an associate therapist dedicated to helping individuals navigate their personal growth, relationships, and mental health challenges. My therapeutic approach integrates evidence-based techniques such as Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Motivational Interviewing (MI) to support clients in achieving meaningful change in their lives.",
                 "As an Asian American, I deeply understand the unique struggles and challenges that come with navigating multiple cultures and identities. Many of my clients, especially those from immigrant backgrounds, experience acculturation stress, family dynamics, and the complexities of balancing traditional values with the demands of living in a new culture. These challenges can lead to feelings of isolation, anxiety, and confusion, but I believe that with the right support, everyone can find their path toward healing, self-discovery, and resilience."
             ],
             credentials: [
-                    'Master of Social Work from California State University, Los Angeles',
-                    'Associated Social Worker'
-                ],
-                mainContent: [
-                    "Throughout my career, I have worked extensively with both adults and older adults, helping them overcome a variety of issues such as anxiety, depression, trauma, and relationship difficulties. I have seen firsthand how powerful the therapeutic process can be in helping individuals move through difficult transitions, whether it's adjusting to life in a new country, coping with family pressures, or addressing long-standing emotional struggles.",
-                    "My work with clients is built on empathy, respect, and the belief that each person is capable of growth. I focus on creating a safe and non-judgmental space where you can feel heard, understood, and empowered to make positive changes. Together, we will work on improving your mental health, developing coping strategies, strengthening family relationships, and navigating the complexities of cultural identity.",
-                    "Whether you're struggling with family dynamics, adjusting to life in a new environment, or seeking personal growth, my goal is to help you regain a sense of balance and find peace within yourself. By combining my cultural understanding with my professional training, I can offer a supportive and effective space for healing."
-                ],
-                quote: 'I believe therapy is a collaborative journey where we work together to discover your strengths, navigate challenges, and build resilience. My goal is to create a space where you feel truly understood as you embrace your authentic self.',
-                personalContent: "When I'm not working, I love hiking and reading. Both activities allow me to expand my horizons, and I enjoy balancing the adventure of the outdoors with the adventure of a great story."
+                'Master of Social Work from California State University, Los Angeles',
+                'Associated Social Worker'
+            ],
+            mainContent: [
+                "Throughout my career, I have worked extensively with both adults and older adults, helping them overcome a variety of issues such as anxiety, depression, trauma, and relationship difficulties. I have seen firsthand how powerful the therapeutic process can be in helping individuals move through difficult transitions, whether it's adjusting to life in a new country, coping with family pressures, or addressing long-standing emotional struggles.",
+                "My work with clients is built on empathy, respect, and the belief that each person is capable of growth. I focus on creating a safe and non-judgmental space where you can feel heard, understood, and empowered to make positive changes. Together, we will work on improving your mental health, developing coping strategies, strengthening family relationships, and navigating the complexities of cultural identity.",
+                "Whether you're struggling with family dynamics, adjusting to life in a new environment, or seeking personal growth, my goal is to help you regain a sense of balance and find peace within yourself. By combining my cultural understanding with my professional training, I can offer a supportive and effective space for healing."
+            ],
+            quote: 'I believe therapy is a collaborative journey where we work together to discover your strengths, navigate challenges, and build resilience. My goal is to create a space where you feel truly understood as you embrace your authentic self.',
+            personalContent: "When I'm not working, I love hiking and reading. Both activities allow me to expand my horizons, and I enjoy balancing the adventure of the outdoors with the adventure of a great story."
+        },
+        {
+            id: 'chelsea',
+            name: 'Chelsea Lee, APCC',
+            title: 'Associate Professional Clinical Counselor | Mind Matters Center',
+            image: ChelseaImg,
+            introContent: [
+                "Many people struggle with everyday stresses, including life adjustments, work burnout, relationship challenges, identity crises, and cultural conflicts, in addition to anxiety, MDD, or other mental health issues. These struggles can feel overwhelming, making it difficult to find a clear path forward."
+            ],
+            credentials: [
+                'Master of Philosophy in Education (M.Phil. Ed.) from University of Pennsylvania',
+                'Master of Science in Education (MSEd.) from University of Pennsylvania',
+                'Associate Professional Clinical Counselor'
+            ],
+            mainContent: [
+                "I take an integrative approach, combining CBT, attachment-focused therapy, emotionally focused therapy, and psychodynamic techniques to address each client’s unique needs. Through a cooperative and personalized process, I help clients explore their experiences, develop coping skills, and foster deeper self-awareness.",
+                "Over the past year, I have worked at the LA County Department of Mental Health, conducting intake assessments, diagnosing clients, and providing individual psychotherapy for individuals facing moderate to severe mental health conditions, including depression, anxiety, PTSD, bipolar disorder, schizophrenia, and personality disorders. I also provide crisis interventions to support clients during acute mental health episodes.",
+                "My practice focuses on working with couples, families, individuals, young adults, and teenagers. I specialize in helping clients navigate life transitions & adjustment issues, work & academic challenges, relationship & attachment issues, identity & cultural concerns, and self-esteem & personal growth, in addition to anxiety, depression, and trauma."
+            ],
+            quote: 'We don\'t have to do all of it alone. We were never meant to.',
+            personalContent: "Outside of work, I love skiing and snowboarding—there's something about being on the slopes that feels freeing. I also enjoy exploring new experiences and discovering what truly brings me joy."
         }
     ];
+    
     return (
         <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
             {/* SEO Section */}
@@ -123,6 +168,7 @@ const OurTeam = () => {
                 structuredData={therapistsStructuredData}
                 ogImage={ZengImg}
             />
+            
             {/* Hero Section */}
             <section className="mb-12 sm:mb-16 md:mb-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

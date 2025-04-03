@@ -7,6 +7,7 @@ import { FadeInSection, HoverCard } from '../components/shared/Animations';
 import BookNowCTA from '../components/shared/BookNowCTA';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
 import ElaineImg from '../assets/images/profile_pics/elaine.jpg';
+import ChelseaImg from '../assets/images/profile_pics/chelsea.jpg';
 import SEO from '../components/shared/SEO';
 import { createOrganizationStructuredData } from '../components/shared/StructuredData';
 
@@ -254,7 +255,7 @@ const Home = () => {
       {/* Team Introduction Section */}
       <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary inline-block relative">
                 Our Clinical Team
@@ -265,9 +266,9 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
               {/* Therapist 1 */}
-              <div className="group w-full md:w-[calc(50%-2rem)] max-w-md">
+              <div className="group w-full sm:w-[calc(33%-1rem)] max-w-sm">
                 <div className="relative rounded-xl overflow-hidden shadow-xl transform transition-transform duration-500">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
                   <img
@@ -276,11 +277,11 @@ const Home = () => {
                     className="w-full h-[450px] object-cover object-center"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform transition-transform duration-500">
-                    <h3 className="text-xl md:text-2xl font-serif text-white mb-2">
+                    <h3 className="text-lg md:text-xl font-serif text-white mb-2">
                       Yajun (Stella) Zeng, LCSW
                     </h3>
-                    <p className="text-white/90 text-sm md:text-base">
-                      Clinical Director | Mind Matters Center
+                    <p className="text-white/90 text-sm">
+                      Clinical Director
                     </p>
                   </div>
                 </div>
@@ -290,25 +291,48 @@ const Home = () => {
               </div>
 
               {/* Therapist 2 */}
-              <div className="group w-full md:w-[calc(50%-2rem)] max-w-md">
+              <div className="group w-full sm:w-[calc(33%-1rem)] max-w-sm">
                 <div className="relative rounded-xl overflow-hidden shadow-xl transform transition-transform duration-500">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
                   <img
                     src={ElaineImg}
                     alt="Elaine Li, ASW"
-                    className="w-full h-[450px] object-cover object-center"
+                  className="w-full h-[450px] object-cover object-center"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform transition-transform duration-500">
-                    <h3 className="text-xl md:text-2xl font-serif text-white mb-2">
+                    <h3 className="text-lg md:text-xl font-serif text-white mb-2">
                       Elaine Li, ASW
                     </h3>
-                    <p className="text-white/90 text-sm md:text-base">
-                      Associate Therapist | Mind Matters Center
+                    <p className="text-white/90 text-sm">
+                      Associate Therapist
                     </p>
                   </div>
                 </div>
                 <div className="mt-4 flex justify-center">
                   <BookNowCTA size="sm" therapistId="elaine" />
+                </div>
+              </div>
+
+              {/* Therapist 3 - Chelsea */}
+              <div className="group w-full sm:w-[calc(33%-1rem)] max-w-sm">
+                <div className="relative rounded-xl overflow-hidden shadow-xl transform transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+                  <img
+                    src={ChelseaImg}
+                    alt="Chelsea Lee, APCC"
+                   className="w-full h-[450px] object-cover object-center"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform transition-transform duration-500">
+                    <h3 className="text-lg md:text-xl font-serif text-white mb-2">
+                      Chelsea Lee, APCC
+                    </h3>
+                    <p className="text-white/90 text-sm">
+                      Associate Professional Clinical Counselor
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 flex justify-center">
+                  <BookNowCTA size="sm" therapistId="chelsea" />
                 </div>
               </div>
             </div>
@@ -329,7 +353,7 @@ const Home = () => {
       </section>
 
       {/* Services Section - What We Offer */}
-      <section className="py-12 md:py-20 bg-brand-background-secondary">
+      < section className="py-12 md:py-20 bg-brand-background-secondary" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-xl md:text-3xl lg:text-5xl font-serif text-brand-text-primary mb-6 md:mb-8">
@@ -387,10 +411,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Specialties Section - Areas of Expertise */}
-      <section className="py-12 md:py-20 bg-brand-background-primary">
+      < section className="py-12 md:py-20 bg-brand-background-primary" >
         <FadeInSection delay={100}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -465,10 +489,10 @@ const Home = () => {
             </div>
           </div>
         </FadeInSection>
-      </section>
+      </section >
 
       {/* Additional Resources Section */}
-      <section className="py-12 md:py-20 bg-brand-background-primary">
+      < section className="py-12 md:py-20 bg-brand-background-primary" >
         <FadeInSection delay={300}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
@@ -572,10 +596,10 @@ const Home = () => {
             </div>
           </div>
         </FadeInSection>
-      </section>
+      </section >
 
       {/* Final CTA */}
-      <section className="py-12 md:py-20 bg-brand-background-secondary">
+      < section className="py-12 md:py-20 bg-brand-background-secondary" >
         <FadeInSection delay={400}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-primary mb-8">
@@ -593,7 +617,7 @@ const Home = () => {
             </div>
           </div>
         </FadeInSection>
-      </section>
+      </section >
     </>
   );
 };

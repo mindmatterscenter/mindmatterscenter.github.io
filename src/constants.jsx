@@ -10,4 +10,5 @@ export const CLIENT_PORTAL_URL = 'https://mindmatterscenter.janeapp.com/';
 export const THERAPIST_URLS = {
   stella: 'https://mindmatterscenter.janeapp.com/#/staff_member/1',
   elaine: 'https://mindmatterscenter.janeapp.com/#/staff_member/2',
+  chelsea: 'https://mindmatterscenter.janeapp.com/#/staff_member/4',
 };
