@@ -125,7 +125,8 @@ const About = () => {
                   We specialize in working with Asian American clients, understanding the unique cultural
                   experiences and struggles that shape their mental health. Our team of experienced
                   therapists offers personalized support for anxiety, trauma, relationship issues,
-                  and other life stressors.
+                  and other life stressors. Our team of experienced therapists is here to offer personalized support tailored to your needs.
+
                 </p>
                 <div className="flex justify-center lg:justify-end">
                   <BookNowCTA />
