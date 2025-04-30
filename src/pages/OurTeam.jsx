@@ -2,7 +2,6 @@ import React from 'react';
 import TeamMember from '../components/shared/TeamMember';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
 import ElaineImg from '../assets/images/profile_pics/elaine.jpg';
-import ChelseaImg from '../assets/images/profile_pics/chelsea.jpg'; // You'll need to add this image
 import SEO from '../components/shared/SEO';
 
 const OurTeam = () => {
@@ -133,27 +132,6 @@ const OurTeam = () => {
             ],
             quote: 'I believe therapy is a collaborative journey where we work together to discover your strengths, navigate challenges, and build resilience. My goal is to create a space where you feel truly understood as you embrace your authentic self.',
             personalContent: "When I'm not working, I love hiking and reading. Both activities allow me to expand my horizons, and I enjoy balancing the adventure of the outdoors with the adventure of a great story."
-        },
-        {
-            id: 'chelsea',
-            name: 'Chelsea Lee, APCC',
-            title: 'Associate Professional Clinical Counselor | Mind Matters Center',
-            image: ChelseaImg,
-            introContent: [
-                "Many people struggle with everyday stresses, including life adjustments, work burnout, relationship challenges, identity crises, and cultural conflicts, in addition to anxiety, MDD, or other mental health issues. These struggles can feel overwhelming, making it difficult to find a clear path forward."
-            ],
-            credentials: [
-                'Master of Philosophy in Education (M.Phil. Ed.) from University of Pennsylvania',
-                'Master of Science in Education (MSEd.) from University of Pennsylvania',
-                'Associate Professional Clinical Counselor'
-            ],
-            mainContent: [
-                "I take an integrative approach, combining CBT, attachment-focused therapy, emotionally focused therapy, and psychodynamic techniques to address each client’s unique needs. Through a cooperative and personalized process, I help clients explore their experiences, develop coping skills, and foster deeper self-awareness.",
-                "Over the past year, I have worked at the LA County Department of Mental Health, conducting intake assessments, diagnosing clients, and providing individual psychotherapy for individuals facing moderate to severe mental health conditions, including depression, anxiety, PTSD, bipolar disorder, schizophrenia, and personality disorders. I also provide crisis interventions to support clients during acute mental health episodes.",
-                "My practice focuses on working with couples, families, individuals, young adults, and teenagers. I specialize in helping clients navigate life transitions & adjustment issues, work & academic challenges, relationship & attachment issues, identity & cultural concerns, and self-esteem & personal growth, in addition to anxiety, depression, and trauma."
-            ],
-            quote: 'We don\'t have to do all of it alone. We were never meant to.',
-            personalContent: "Outside of work, I love skiing and snowboarding—there's something about being on the slopes that feels freeing. I also enjoy exploring new experiences and discovering what truly brings me joy."
         }
     ];
     
