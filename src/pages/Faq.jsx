@@ -19,11 +19,9 @@ const Faq = () => {
     },
     {
       question: "Can I use my insurance?",
-      answer: `At this time, we are unable to accept insurance and operate as out-of-network providers. This means that you are responsible for the full payment of session fees at the time of service. Upon request, we can provide you with detailed weekly or monthly statements (superbills) that you may submit to your insurance company for potential reimbursement.
+      answer: `Yes. We accept several insurance plans, including Lyra, Aetna, and more. Please contact us to check if we’re in-network with your plan.
 
-      We provide superbills for you to submit to your insurance. Please check with your provider to see if you're eligible for reimbursement.
-      
-      We are actively exploring the option of accepting insurance and may be able to do so in the near future. Please check back for updates regarding our insurance policy.`
+     If we are not in-network with your insurance, we can still help. We’ll provide you with a “superbill” (a detailed receipt) that you can send to your insurance company to ask for reimbursement. Please check with your insurance to see if they offer out-of-network coverage. We’re happy to walk you through it.`
     },
     {
       question: "Can I use my HSA or FSA card?",
@@ -37,7 +35,7 @@ const Faq = () => {
     },
     {
       question: "What is the cancellation policy?",
-      answer: "Cancellations require a 24-hour notice to avoid charges."
+      answer: "Cancellations require a 48-hour notice to avoid charges."
     },
     {
       question: "Do you provide sessions through text messages or phone calls?",
